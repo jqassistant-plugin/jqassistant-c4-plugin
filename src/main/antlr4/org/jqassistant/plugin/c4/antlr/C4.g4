@@ -3,13 +3,15 @@ grammar C4;
 c4:
     Startuml (name=Param)? NL+
     (Preproc NL+)*
+    (Skinparam NL+)*
     element*
     (ShowLegend NL*)?
     Enduml NL*
     EOF;
 
-element: ((addProperty NL+)* ((c4Element hierarchy?) | rel | biRel) NL+);
+element: (((addProperty | addRelTag) NL+)* ((c4Element hierarchy?) | rel | biRel) NL+);
 addProperty: AddProperty LB key=Param CM value=Param RB;
+addRelTag: AddRelTag;
 
 c4Element: component | container | system | person | boundary;
 hierarchy: (RCB NL* element* LCB);
@@ -95,7 +97,9 @@ BiRel: 'Bi' Rel;
 Param: STRING | KeyValue;
 KeyValue: DL CHAR+ WS* '=' WS* STRING;
 Preproc: '!' ~[\r\n]*;
+Skinparam: 'skinparam' ~[\r\n]*;
 ShowLegend: 'SHOW_LEGEND' ~[\r\n]*;
+AddRelTag: 'AddRelTag' ~[\r\n]*;
 
 STRING: '"' ~["\r\n]* '"' | CHAR+;
 CHAR: ~[",)({}@!\r\n ];
