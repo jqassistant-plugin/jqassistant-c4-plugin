@@ -18,7 +18,7 @@ public class C4DiagramScannerPluginIT extends AbstractPluginIT {
     @Test
     public void allElementsTest() {
         String presentation = "(presentation:C4:Boundary:Container:Label1:Label2{alias: 'presentation', name: 'Präsentation'})";
-        String web = "(web:C4:Component:Label3:Label4{alias: 'web', name: 'web', var: '2'})";
+        String web = "(web:C4:Component:Label3:Label4{alias: 'web', name: 'web', varBla: '2'})";
         String component1 = "(component1:C4:Component:ComponentTag{alias: 'component1', name: 'ComponentName', technologies: ['ComponentTechnology'], description: 'ComponentDescription', Test: '1'})";
         String a ="(a:C4:Component{alias: 'a', name: 'b', technologies: ['c'], description: 'd'})";
         String test111 = "(test111:C4:Person{alias: 'test111', name: 'Test'})";
@@ -75,7 +75,7 @@ public class C4DiagramScannerPluginIT extends AbstractPluginIT {
         assertThat(query("MATCH " + component1 + "-[:CONTAINS]->" + a + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + abc + "-[:CONTAINS]->" + abcSystem + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + def + "-[:CONTAINS]->" + defSystem + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
-        assertThat(query("MATCH " + abc + "-[:DEPENDS_ON]->" + def + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
+        assertThat(query("MATCH " + abc + "-[:depends]->" + def + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + componentDb1 + "-[:DEPENDS_ON]->" + componentQueue1 + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + componentQueue1 + "-[:DEPENDS_ON]->" + componentDb1 + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + component1 + "-[:USES_DB{name: 'Uses', technologies: ['Uses_Technology'], A: 'B'}]->" + componentDb1 + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);

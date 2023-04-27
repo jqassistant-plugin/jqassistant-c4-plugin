@@ -1,9 +1,11 @@
 @startuml
-
 !include <C4/C4_Component>
+skinparam linetype ortho
+
+AddRelTag("depends", $textColor=$ARROW_COLOR, $lineColor=$ARROW_COLOR)
 
 Container_Boundary(presentation, "Präsentation", $tags="Label1+Label2") {
-  AddProperty("var", 2)
+  AddProperty("var Bla", 2)
   Component(web, "web", $tags="Label3+Label4")
 }
 
@@ -22,7 +24,7 @@ Enterprise_Boundary(def, "d", "System") {
     System(defSystem, "DefSystemName")
 }
 
-Rel(abc, def, "")
+Rel(abc, def, "", $tags="depends")
 
 Component(minComponent, "MinComponent")
 ComponentDb(componentDb1, "ComponentDbName", "ComponentDbTechnology", "ComponentDbDescription", $tags="ComponentDbTag")

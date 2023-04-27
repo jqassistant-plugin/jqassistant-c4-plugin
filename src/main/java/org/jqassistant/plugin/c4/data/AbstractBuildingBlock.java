@@ -48,7 +48,7 @@ public abstract class AbstractBuildingBlock extends AbstractElement {
         if (this.properties != null && this.properties.size() > 0) {
             return ", " + properties.entrySet()
                     .stream()
-                    .map(e -> e.getKey() + ": \"" + e.getValue() + "\"")
+                    .map(e -> e.getKey().replaceAll(" ", "") + ": \"" + e.getValue() + "\"")
                     .collect(Collectors.joining(", "));
         } else {
             return "";
