@@ -4,11 +4,12 @@ skinparam linetype ortho
 
 AddRelTag("depends", $textColor=$ARROW_COLOR, $lineColor=$ARROW_COLOR)
 
-Container_Boundary(presentation, "Präsentation", $tags="Label1+Label2") {
+Container_Boundary(presentation, "Praesentation", $tags="Label1+Label2") {
   AddProperty("var Bla", 2)
   Component(web, "web", $tags="Label3+Label4")
 }
 
+WithoutPropertyHeader()
 AddProperty("Test", "1")
 Component(component1, "ComponentName", "ComponentTechnology", "ComponentDescription", "ignoreSprite", "ComponentTag") {
     Component(a, "b", "c", "d")

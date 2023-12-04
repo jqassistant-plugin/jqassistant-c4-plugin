@@ -17,7 +17,7 @@ public class C4DiagramScannerPluginIT extends AbstractPluginIT {
 
     @Test
     public void allElementsTest() {
-        String presentation = "(presentation:C4:Boundary:Container:Label1:Label2{alias: 'presentation', name: 'Präsentation'})";
+        String presentation = "(presentation:C4:Boundary:Container:Label1:Label2{alias: 'presentation', name: 'Praesentation'})";
         String web = "(web:C4:Component:Label3:Label4{alias: 'web', name: 'web', varBla: '2'})";
         String component1 = "(component1:C4:Component:ComponentTag{alias: 'component1', name: 'ComponentName', technologies: ['ComponentTechnology'], description: 'ComponentDescription', Test: '1'})";
         String a ="(a:C4:Component{alias: 'a', name: 'b', technologies: ['c'], description: 'd'})";

@@ -9,9 +9,9 @@ c4:
     Enduml NL*
     EOF;
 
-element: (((addProperty | addRelTag) NL+)* ((c4Element hierarchy?) | rel | biRel) NL+);
+element: (((addProperty | ignore) NL+)* ((c4Element hierarchy?) | rel | biRel) NL+);
 addProperty: AddProperty LB key=Param CM value=Param RB;
-addRelTag: AddRelTag;
+ignore: Ignore;
 
 c4Element: component | container | system | person | boundary;
 hierarchy: (RCB NL* element* LCB);
@@ -99,7 +99,7 @@ KeyValue: DL CHAR+ WS* '=' WS* STRING;
 Preproc: '!' ~[\r\n]*;
 Skinparam: 'skinparam' ~[\r\n]*;
 ShowLegend: 'SHOW_LEGEND' ~[\r\n]*;
-AddRelTag: 'AddRelTag' ~[\r\n]*;
+Ignore: ('AddRelTag' | 'AddComponentTag' | 'AddExternalComponentTag' | 'UpdateBoundaryStyle' | 'WithoutPropertyHeader') ~[\r\n]*;
 
 STRING: '"' ~["\r\n]* '"' | CHAR+;
 CHAR: ~[",)({}@!\r\n ];
