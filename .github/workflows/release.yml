@@ -4,6 +4,11 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
+      java_version:
+        description: Java version to use
+        type: string
+        required: false
+        default: 11
       branch:
         description: "The branch to checkout when cutting the release."
         required: true
