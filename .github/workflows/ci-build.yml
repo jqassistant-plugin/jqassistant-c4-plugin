@@ -23,6 +23,6 @@ jobs:
       publish_snapshots: true
     secrets:
       ossrh_username: ${{ secrets.OSSRH_USERNAME }}
-      ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+      ossrh_password: ${{ secrets.OSSRH_PASSWORD }}
       ossrh_signing_key: ${{ secrets.OSSRH_SIGNING_KEY }}
       ossrh_signing_password: ${{ secrets.OSSRH_SIGNING_PASSWORD }}
