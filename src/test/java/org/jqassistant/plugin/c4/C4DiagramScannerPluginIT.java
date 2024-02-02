@@ -24,6 +24,7 @@ public class C4DiagramScannerPluginIT extends AbstractPluginIT {
         String test111 = "(test111:C4:Person{alias: 'test111', name: 'Test'})";
         String abc = "(abc:C4:Boundary:Example:Layer{alias: 'abc', name: 'a'})";
         String abcSystem = "(abcSystem:C4:System{alias: 'abcSystem', name: 'AbcSystemName', Blub: 'bla'})";
+        String abcInnerBoundary = "(abcInnerBoundary:C4:System:Boundary{alias: 'abcInnerBoundary', name: 'AbcInnerBoundaryName'})";
         String def = "(def:C4:Enterprise:Boundary:System{alias: 'def', name: 'd'})";
         String defSystem = "(defSystem:C4:System{alias: 'defSystem', name: 'DefSystemName'})";
         String minComponent = "(minComponent:C4:Component{alias: 'minComponent', name: 'MinComponent'})";
@@ -49,7 +50,7 @@ public class C4DiagramScannerPluginIT extends AbstractPluginIT {
         String label = "(label:C4:Component:abab{alias: 'label', name: 'alias', technologies: ['Tech'], description: 'asjsa'})";
 
         List<String> elements = Arrays.asList(
-                presentation, web, component1, a, test111, abc, abcSystem, def, defSystem,
+                presentation, web, component1, a, test111, abc, abcSystem, abcInnerBoundary, def, defSystem,
                 minComponent, componentDb1, componentQueue1, componentExt1, componentDbExt1, componentQueueExt1,
                 minContainer, container1, containerDb1, containerQueue1, containerExt1, containerDbExt1, containerQueueExt1,
                 minSystem, system1, systemDb1, systemQueue1, systemExt1, systemDbExt1, systemQueueExt1,
@@ -60,10 +61,10 @@ public class C4DiagramScannerPluginIT extends AbstractPluginIT {
         C4DiagramDescriptor c4DiagramDescriptor = scanFileAndAssert("AllElements.puml");
 
         assertThat(c4DiagramDescriptor.getName()).isEqualTo("AllElements");
-        assertThat(c4DiagramDescriptor.getBoundaries()).hasSize(3);
+        assertThat(c4DiagramDescriptor.getBoundaries()).hasSize(4);
         assertThat(c4DiagramDescriptor.getComponents()).hasSize(10);
         assertThat(c4DiagramDescriptor.getContainers()).hasSize(8);
-        assertThat(c4DiagramDescriptor.getSystems()).hasSize(10);
+        assertThat(c4DiagramDescriptor.getSystems()).hasSize(11);
 
         for (String element : elements) {
             TestResult query = query("MATCH " + element + "RETURN count(*) AS cnt");
@@ -74,6 +75,7 @@ public class C4DiagramScannerPluginIT extends AbstractPluginIT {
         assertThat(query("MATCH " + presentation + "-[:CONTAINS]->" + web + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + component1 + "-[:CONTAINS]->" + a + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + abc + "-[:CONTAINS]->" + abcSystem + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
+        assertThat(query("MATCH " + abc + "-[:CONTAINS]->" + abcInnerBoundary + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + def + "-[:CONTAINS]->" + defSystem + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + abc + "-[:depends]->" + def + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);
         assertThat(query("MATCH " + componentDb1 + "-[:DEPENDS_ON]->" + componentQueue1 + " RETURN count(*) AS cnt").getColumn("cnt").get(0)).isEqualTo(1L);

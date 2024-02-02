@@ -19,6 +19,9 @@ Person(test111, "Test")
 AddProperty("Blub", "bla")
 Boundary(abc, "a", "Example", $tags="Layer") {
     System(abcSystem, "AbcSystemName")
+    System_Boundary(abcInnerBoundary, "AbcInnerBoundaryName") {
+
+    }
 }
 
 Enterprise_Boundary(def, "d", "System") {

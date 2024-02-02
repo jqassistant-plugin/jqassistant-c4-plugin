@@ -135,6 +135,10 @@ public class C4ParseListener extends C4BaseListener {
             processParameters(builder, ctx.genericBoundaryParamList());
         }
 
+        if (parentHierarchy.size() > 0) {
+            builder.parent(parentHierarchy.get(parentHierarchy.size() - 1));
+        }
+
         c4Elements.add(builder.build());
     }
 
