@@ -37,10 +37,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <properties>
-        <com.buschmais.jqassistant.version>2.1.0-M1</com.buschmais.jqassistant.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.buschmais.jqassistant.core</groupId>
@@ -53,8 +49,6 @@
         <dependency>
             <groupId>com.buschmais.jqassistant.plugin</groupId>
             <artifactId>common</artifactId>
-            <version>${com.buschmais.jqassistant.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
