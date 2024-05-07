@@ -145,7 +145,7 @@
                 <jdk>11</jdk>
             </activation>
             <properties>
-                <antlr4.version>4.7.2</neo4j.version>
+                <antlr4.version>4.7.2</antlr4.version>
             </properties>
         </profile>
         <profile>
@@ -154,7 +154,7 @@
                 <jdk>[17,)</jdk>
             </activation>
             <properties>
-                <antlr4.version>4.13.1</neo4j.version>
+                <antlr4.version>4.13.1</antlr4.version>
             </properties>
         </profile>
 
