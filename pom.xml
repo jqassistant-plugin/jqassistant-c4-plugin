@@ -98,7 +98,7 @@
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
-            <version>4.13.1</version>
+            <version>${antlr4.version}</version>
         </dependency>
     </dependencies>
 
@@ -126,7 +126,7 @@
             <plugin>
                 <groupId>org.antlr</groupId>
                 <artifactId>antlr4-maven-plugin</artifactId>
-                <version>4.13.1</version>
+                <version>${antlr4.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -137,5 +137,25 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>neo4jv4</id>
+            <activation>
+                <jdk>11</jdk>
+            </activation>
+            <properties>
+                <antlr4.version>4.7.2</neo4j.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>neo4jv5</id>
+            <activation>
+                <jdk>[17,)</jdk>
+            </activation>
+            <properties>
+                <antlr4.version>4.13.1</neo4j.version>
+            </properties>
+        </profile>
 
 </project>
