@@ -1,0 +1,5 @@
+org.jqassistant.plugin.c4.C4ParseListener#enterHierarchy(Lorg/jqassistant/plugin/c4/antlr/C4Parser$HierarchyContext;)V
+==
+add java.util.ArrayList#add(Ljava/lang/Object;)Z
+get java.util.List#get(I)Ljava/lang/Object;
+size java.util.List#size()I

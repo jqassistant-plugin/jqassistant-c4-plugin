@@ -1,0 +1,162 @@
+
+âorg.jqassistant.plugin.c4.C4DiagramParser#parseDiagram(Ljava/io/InputStream;Ljava/lang/String;)Lorg/jqassistant/plugin/c4/data/C4Diagram;Ñ
+z/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/C4DiagramParser.java   (!"4*m
+2.] .(iY
+W
+.] .(i
+%16"__id*>
+
+__unknown_file ("
+ 
+fallbackNamejava.lang.String*
+1*R
+3.A .(P>
+<
+.A .(Z
+%16"__id*#
+
+__unknown_file (
+
+%17*
+1*≥
+4!5 !(7`^
+!$ !(4+
+%0%org.antlr.v4.runtime.ANTLRInputStream"%org.antlr.v4.runtime.ANTLRInputStream›
+⁄
+!  !(8
+%1"Dorg.antlr.v4.runtime.ANTLRInputStream#<init>(Ljava/io/InputStream;)V*I
+
+__unknown_file (-
++
+%0%org.antlr.v4.runtime.ANTLRInputStream*7
+
+__unknown_file (
+
+isjava.io.InputStreamdb
+! !(-
+%2'org.jqassistant.plugin.c4.antlr.C4Lexer"'org.jqassistant.plugin.c4.antlr.C4Lexerˇ
+¸
+! !(9
+%3"Rorg.jqassistant.plugin.c4.antlr.C4Lexer#<init>(Lorg/antlr/v4/runtime/CharStream;)V*K
+
+__unknown_file (/
+-
+%2'org.jqassistant.plugin.c4.antlr.C4Lexer*I
+
+__unknown_file (-
++
+%0%org.antlr.v4.runtime.ANTLRInputStreamé
+ã
+! !(:,
+l'org.jqassistant.plugin.c4.antlr.C4Lexer"__id*K
+
+__unknown_file (/
+-
+%2'org.jqassistant.plugin.c4.antlr.C4Lexerb`
+"& "(7,
+%4&org.antlr.v4.runtime.CommonTokenStream"&org.antlr.v4.runtime.CommonTokenStreamˇ
+¸
+"" "(:
+%5"Rorg.antlr.v4.runtime.CommonTokenStream#<init>(Lorg/antlr/v4/runtime/TokenSource;)V*J
+
+__unknown_file (.
+,
+%4&org.antlr.v4.runtime.CommonTokenStream*J
+
+__unknown_file (.
+,
+l'org.jqassistant.plugin.c4.antlr.C4Lexerfd
+" "(!.
+%6(org.jqassistant.plugin.c4.antlr.C4Parser"(org.jqassistant.plugin.c4.antlr.C4ParserÉ
+Ä
+" "(;
+%7"Torg.jqassistant.plugin.c4.antlr.C4Parser#<init>(Lorg/antlr/v4/runtime/TokenStream;)V*L
+
+__unknown_file (0
+.
+%6(org.jqassistant.plugin.c4.antlr.C4Parser*J
+
+__unknown_file (.
+,
+%4&org.antlr.v4.runtime.CommonTokenStreamê
+ç
+" "(<-
+p(org.jqassistant.plugin.c4.antlr.C4Parser"__id*L
+
+__unknown_file (0
+.
+%6(org.jqassistant.plugin.c4.antlr.C4Parserlj
+# #(01
+%8+org.jqassistant.plugin.c4.C4DiagramParser$1"+org.jqassistant.plugin.c4.C4DiagramParser$1ñ
+ì
+# ((	
+%9"0org.antlr.v4.runtime.BaseErrorListener#<init>()V*O
+
+__unknown_file (3
+1
+%8+org.jqassistant.plugin.c4.C4DiagramParser$1”–
+# ((
+
+%10void"\org.antlr.v4.runtime.Recognizer#addErrorListener(Lorg/antlr/v4/runtime/ANTLRErrorListener;)V*K
+
+__unknown_file (/
+-
+p(org.jqassistant.plugin.c4.antlr.C4Parser*O
+
+__unknown_file (3
+1
+%8+org.jqassistant.plugin.c4.C4DiagramParser$12;addErrorListener(Lorg/antlr/v4/runtime/ANTLRErrorListener;)ig
+*. *(=0
+%11)org.jqassistant.plugin.c4.C4ParseListener")org.jqassistant.plugin.c4.C4ParseListenerô
+ñ
+** *(?
+%12"3org.jqassistant.plugin.c4.C4ParseListener#<init>()V*N
+
+__unknown_file (2
+0
+%11)org.jqassistant.plugin.c4.C4ParseListener°
+û
+* *(@<
+c4ParseListener)org.jqassistant.plugin.c4.C4ParseListener"__id*N
+
+__unknown_file (2
+0
+%11)org.jqassistant.plugin.c4.C4ParseListener‚ﬂ
++ +(+
+%13void"\org.antlr.v4.runtime.Parser#addParseListener(Lorg/antlr/v4/runtime/tree/ParseTreeListener;)V*K
+
+__unknown_file (/
+-
+p(org.jqassistant.plugin.c4.antlr.C4Parser*Z
+
+__unknown_file (>
+<
+c4ParseListener)org.jqassistant.plugin.c4.C4ParseListener2?addParseListener(Lorg/antlr/v4/runtime/tree/ParseTreeListener;)˛˚
+, ,(9
+%142org.jqassistant.plugin.c4.antlr.C4Parser$C4Context"aorg.jqassistant.plugin.c4.antlr.C4Parser#c4()Lorg/jqassistant/plugin/c4/antlr/C4Parser$C4Context;*K
+
+__unknown_file (/
+-
+p(org.jqassistant.plugin.c4.antlr.C4Parser2c4()ã
+à
+. .(>
+%15"	__compare*"
+
+__unknown_file (
+!=*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+""*
+2
+3*"
+1.k .(z"
+	. .(µ
+"":%
+ "  (1
+isjava.io.InputStream:,
+ 2  (E 
+fallbackNamejava.lang.StringB-+
+)org.jqassistant.plugin.c4.C4DiagramParserH

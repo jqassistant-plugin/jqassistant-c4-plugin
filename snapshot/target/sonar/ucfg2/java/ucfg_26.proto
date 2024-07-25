@@ -1,0 +1,45 @@
+
+Uorg.jqassistant.plugin.c4.data.Boundary#buildStringRepresentation()Ljava/lang/String;‚
+x/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/Boundary.java (+"1*·
+1 (×Ô
+) (;
+%0java.lang.String"Sorg.jqassistant.plugin.c4.data.AbstractElement#buildLabelString()Ljava/lang/String;*G
+
+__unknown_file (+)
+'org.jqassistant.plugin.c4.data.Boundary2buildLabelString()×Ô
+= (O
+%1java.lang.String"Sorg.jqassistant.plugin.c4.data.AbstractElement#buildAliasString()Ljava/lang/String;*G
+
+__unknown_file (+)
+'org.jqassistant.plugin.c4.data.Boundary2buildAliasString()ÕÒ
+Q (b
+%2java.lang.String"Rorg.jqassistant.plugin.c4.data.AbstractElement#buildNameString()Ljava/lang/String;*G
+
+__unknown_file (+)
+'org.jqassistant.plugin.c4.data.Boundary2buildNameString()õ
+ò
+ (c
+%3java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*0
+
+__unknown_file ("
+java.lang.String*(
+
+__unknown_file (
+
+%s{%s%s}*4
+
+__unknown_file (
+
+%0java.lang.String*4
+
+__unknown_file (
+
+%1java.lang.String*4
+
+__unknown_file (
+
+%2java.lang.String"$
+ (d
+
+%3java.lang.StringB+)
+'org.jqassistant.plugin.c4.data.BoundaryH

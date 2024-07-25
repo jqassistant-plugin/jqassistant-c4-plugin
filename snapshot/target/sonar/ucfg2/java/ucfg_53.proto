@@ -1,0 +1,48 @@
+
+?__sonar_lambda_2$org.jqassistant.plugin.c4.data.ElementRelation‰
+/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/ElementRelation.javaF F(G"1*¿
+1F F(—”
+F F((
+%6java.lang.String".java.util.Map$Entry#getKey()Ljava/lang/Object;*6
+
+__unknown_file (
+
+ejava.util.Map$Entry2getKey()j
+h
+F F(1
+%7java.lang.String"__concat*$
+F F((
+
+%6java.lang.String*
+F+ F(1
+: \"›˜
+F4 F(@
+%8java.lang.String"0java.util.Map$Entry#getValue()Ljava/lang/Object;*6
+
+__unknown_file (
+
+ejava.util.Map$Entry2
+getValue()z
+x
+F F(@
+%9java.lang.String"__concat*$
+F F(1
+
+%7java.lang.String*$
+F4 F(@
+
+%8java.lang.Stringi
+g
+F F(G
+%10java.lang.String"__concat*$
+F F(@
+
+%9java.lang.String*
+FC F(G
+\""%
+F F(G
+
+%10java.lang.String:$
+F F(
+ejava.util.Map$EntryB
+java.util.function.Function

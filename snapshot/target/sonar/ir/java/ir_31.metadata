@@ -1,0 +1,11 @@
+org.jqassistant.plugin.c4.C4ParseListener#processSet(Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Consumer;)Z
+java.lang.String#split(Ljava/lang/String;)[Ljava/lang/String;
+java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+java.lang.String#replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+java.util.Arrays#stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
+java.lang.String#contains(Ljava/lang/CharSequence;)Z
+java.util.stream.Collectors#toSet()Ljava/util/stream/Collector;
+==
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+accept java.util.function.Consumer#accept(Ljava/lang/Object;)V

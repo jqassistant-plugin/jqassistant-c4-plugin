@@ -1,0 +1,5 @@
+org.jqassistant.plugin.c4.data.Boundary#getAdditionalStereotypes()Ljava/util/Set;
+java.util.LinkedHashSet#instance-init#
+java.util.LinkedHashSet#<init>()V
+==
+add java.util.Set#add(Ljava/lang/Object;)Z

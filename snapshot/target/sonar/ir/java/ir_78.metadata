@@ -1,0 +1,7 @@
+org.jqassistant.plugin.c4.data.ElementRelation#buildTechnologiesString()Ljava/lang/String;
+org.apache.commons.collections4.CollectionUtils#isEmpty(Ljava/util/Collection;)Z
+java.util.stream.Collectors#joining(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;
+==
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;

@@ -1,0 +1,16 @@
+org.jqassistant.plugin.c4.C4DiagramPersister#createElement(Lorg/jqassistant/plugin/c4/model/C4DiagramDescriptor;Lorg/jqassistant/plugin/c4/data/AbstractElement;)Lorg/jqassistant/plugin/c4/model/ElementDescriptor;
+org.apache.commons.collections4.IteratorUtils#toList(Ljava/util/Iterator;)Ljava/util/List;
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+==
+buildStringRepresentation org.jqassistant.plugin.c4.data.AbstractElement#buildStringRepresentation()Ljava/lang/String;
+executeQuery com.buschmais.jqassistant.core.store.api.Store#executeQuery(Ljava/lang/String;)Lcom/buschmais/xo/api/Query$Result;
+add java.util.List#add(Ljava/lang/Object;)Z
+getSystems org.jqassistant.plugin.c4.model.C4DiagramDescriptor#getSystems()Ljava/util/List;
+iterator com.buschmais.xo.api.ResultIterable#iterator()Lcom/buschmais/xo/api/ResultIterator;
+get java.util.List#get(I)Ljava/lang/Object;
+getComponents org.jqassistant.plugin.c4.model.C4DiagramDescriptor#getComponents()Ljava/util/List;
+getPersons org.jqassistant.plugin.c4.model.C4DiagramDescriptor#getPersons()Ljava/util/List;
+get com.buschmais.xo.api.Query$Result$CompositeRowObject#get(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+size java.util.List#size()I
+getContainers org.jqassistant.plugin.c4.model.C4DiagramDescriptor#getContainers()Ljava/util/List;
+getBoundaries org.jqassistant.plugin.c4.model.C4DiagramDescriptor#getBoundaries()Ljava/util/List;

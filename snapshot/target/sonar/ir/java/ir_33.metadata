@@ -1,0 +1,5 @@
+org.jqassistant.plugin.c4.C4ParseListener#normalize(Lorg/antlr/v4/runtime/Token;)Ljava/lang/String;
+java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+java.lang.String#trim()Ljava/lang/String;
+==
+getText org.antlr.v4.runtime.Token#getText()Ljava/lang/String;

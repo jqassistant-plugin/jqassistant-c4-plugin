@@ -1,0 +1,2 @@
+org.jqassistant.plugin.c4.C4ParseListener#exitC4(Lorg/jqassistant/plugin/c4/antlr/C4Parser$C4Context;)V
+org.jqassistant.plugin.c4.C4ParseListener#normalize(Lorg/antlr/v4/runtime/Token;)Ljava/lang/String;

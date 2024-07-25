@@ -1,0 +1,75 @@
+
+•org.jqassistant.plugin.c4.C4DiagramPersister#persist(Lorg/jqassistant/plugin/c4/data/C4Diagram;)Lorg/jqassistant/plugin/c4/model/C4DiagramDescriptor;‡
+}/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/C4DiagramPersister.java0 0(&"1*È
+112 1(7¢
+Ÿ
+12 1(74
+%0.com.buschmais.jqassistant.core.store.api.Store"__id*W
+
+__unknown_file (;*9.
+,org.jqassistant.plugin.c4.C4DiagramPersister"
+storeáÞ
+12 1(Y9
+%13org.jqassistant.plugin.c4.model.C4DiagramDescriptor"ƒcom.buschmais.jqassistant.core.store.api.Store#create(Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;*R
+
+__unknown_file (6
+4
+%0.com.buschmais.jqassistant.core.store.api.Store*"
+
+__unknown_file (
+""2create(Ljava/lang/Class;)¸
+µ
+1 1(ZJ
+c4DiagramDescriptor3org.jqassistant.plugin.c4.model.C4DiagramDescriptor"__id*W
+
+__unknown_file (;
+9
+%13org.jqassistant.plugin.c4.model.C4DiagramDescriptor
+2 2(8
+%2"Porg.jqassistant.plugin.c4.model.C4DiagramDescriptor#setName(Ljava/lang/String;)V*h
+
+__unknown_file (L
+J
+c4DiagramDescriptor3org.jqassistant.plugin.c4.model.C4DiagramDescriptor*"
+
+__unknown_file (
+""2setName(Ljava/lang/String;)„
+
+39 3(v
+%3"’org.jqassistant.plugin.c4.C4DiagramPersister#persistElements(Lorg/jqassistant/plugin/c4/model/C4DiagramDescriptor;Ljava/util/List;)Ljava/util/Map;*L
+
+__unknown_file (0.
+,org.jqassistant.plugin.c4.C4DiagramPersister*h
+
+__unknown_file (L
+J
+c4DiagramDescriptor3org.jqassistant.plugin.c4.model.C4DiagramDescriptor*"
+
+__unknown_file (
+""X
+V
+3 3(w 
+elementAliasMapjava.util.Map"__id*"
+
+__unknown_file (
+
+%3¦
+£
+4 4(C
+%4"_org.jqassistant.plugin.c4.C4DiagramPersister#persistRelations(Ljava/util/Map;Ljava/util/List;)V*L
+
+__unknown_file (0.
+,org.jqassistant.plugin.c4.C4DiagramPersister*>
+
+__unknown_file ("
+ 
+elementAliasMapjava.util.Map*"
+
+__unknown_file (
+"""X
+6 6(#L
+J
+c4DiagramDescriptor3org.jqassistant.plugin.c4.model.C4DiagramDescriptor:A
+0' 0(:5
+	c4Diagram(org.jqassistant.plugin.c4.data.C4DiagramB0.
+,org.jqassistant.plugin.c4.C4DiagramPersisterH

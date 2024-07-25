@@ -1,0 +1,5 @@
+org.jqassistant.plugin.c4.C4ParseListener#instance-init#
+java.util.ArrayList#<init>()V
+java.util.LinkedHashMap#instance-init#
+java.util.ArrayList#instance-init#
+java.util.LinkedHashMap#<init>()V

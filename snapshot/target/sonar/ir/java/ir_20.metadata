@@ -1,0 +1,6 @@
+org.jqassistant.plugin.c4.C4ParseListener#exitRel(Lorg/jqassistant/plugin/c4/antlr/C4Parser$RelContext;)V
+java.util.HashMap#<init>()V
+java.util.HashMap#instance-init#
+==
+relParamList org.jqassistant.plugin.c4.antlr.C4Parser$RelContext#relParamList()Lorg/jqassistant/plugin/c4/antlr/C4Parser$RelParamListContext;
+add java.util.List#add(Ljava/lang/Object;)Z

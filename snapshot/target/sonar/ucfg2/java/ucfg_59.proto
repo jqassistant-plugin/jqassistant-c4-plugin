@@ -1,0 +1,163 @@
+
+Ãorg.jqassistant.plugin.c4.C4DiagramScannerPlugin#accepts(Lcom/buschmais/jqassistant/plugin/common/api/scanner/filesystem/FileResource;Ljava/lang/String;Lcom/buschmais/jqassistant/core/scanner/api/Scope;)Zå
+Å/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/C4DiagramScannerPlugin.java ("startingBlock*"
+14 ("
+ (
+""*!
+3' '(#"
+' '($
+""*°
+startingBlock (OŒ
+À
+ (
+%7"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*y
+
+__unknown_file (]
+[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResourceú
+ô
+( (4[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource"__annotation*"
+
+__unknown_file (
+
+%7ã
+à
+ (
+%8"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*6
+
+__unknown_file (
+
+pathjava.lang.StringX
+V
+= (A
+pathjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%8¨
+©
+ (
+%9"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*W
+
+__unknown_file (;
+9
+scope0com.buschmais.jqassistant.core.scanner.api.Scopey
+w
+I (N9
+scope0com.buschmais.jqassistant.core.scanner.api.Scope"__annotation*"
+
+__unknown_file (
+
+%9*
+15*É
+15 (ûõ
+ (
+%0java.lang.String"0java.lang.String#toLowerCase()Ljava/lang/String;*6
+
+__unknown_file (
+
+pathjava.lang.String2toLowerCase()«ƒ
+ (1
+%1boolean".java.lang.String#endsWith(Ljava/lang/String;)Z*4
+
+__unknown_file (
+
+%0java.lang.String*%
+
+__unknown_file (	
+.puml2endsWith(Ljava/lang/String;)*
+14
+11*á
+5& &('ÔÏ
+& &(L
+%6boolean"4java.lang.String#contains(Ljava/lang/CharSequence;)Z*=
+
+__unknown_file (!
+
+fileContentjava.lang.String*8
+
+__unknown_file (
+!include <C4/C4_Context>2"contains(Ljava/lang/CharSequence;)*
+3
+1*â
+7% %('ÒÓ
+% %(N
+%5boolean"4java.lang.String#contains(Ljava/lang/CharSequence;)Z*=
+
+__unknown_file (!
+
+fileContentjava.lang.String*:
+
+__unknown_file (
+!include <C4/C4_Container>2"contains(Ljava/lang/CharSequence;)*
+3
+5*Ù
+9# #(>i
+g
+# #(>
+fileContentjava.lang.String"__id*4
+
+__unknown_file (
+
+%3java.lang.StringÒÓ
+$ $(J
+%4boolean"4java.lang.String#contains(Ljava/lang/CharSequence;)Z*=
+
+__unknown_file (!
+
+fileContentjava.lang.String*:
+
+__unknown_file (
+!include <C4/C4_Component>2"contains(Ljava/lang/CharSequence;)*
+3
+7*Ï
+10" "(Af
+d
+" "(A
+isjava.io.InputStream"__id*7
+
+__unknown_file (
+
+%2java.io.InputStreamÓ
+Î
+#) #(=
+%3java.lang.String"Oorg.apache.commons.io.IOUtils#toString(Ljava/io/InputStream;)Ljava/lang/String;*=
+
+__unknown_file (!"
+org.apache.commons.io.IOUtils*7
+
+__unknown_file (
+
+isjava.io.InputStream*
+9*ª
+11"& "(2§°
+"& "(A
+%2java.io.InputStream"ocom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource#createStream()Ljava/io/InputStream;*y
+
+__unknown_file (]
+[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource2createStream()*
+10*!
+1. .("
+. .(
+"":g
+ (5[
+fileResourceKcom.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource:$
+6 (B
+pathjava.lang.String:E
+C (N9
+scope0com.buschmais.jqassistant.core.scanner.api.ScopeB42
+0org.jqassistant.plugin.c4.C4DiagramScannerPluginHX

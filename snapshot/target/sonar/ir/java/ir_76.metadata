@@ -1,0 +1,2 @@
+org.jqassistant.plugin.c4.data.ElementRelation#buildDescriptionString()Ljava/lang/String;
+org.apache.commons.lang3.StringUtils#isEmpty(Ljava/lang/CharSequence;)Z

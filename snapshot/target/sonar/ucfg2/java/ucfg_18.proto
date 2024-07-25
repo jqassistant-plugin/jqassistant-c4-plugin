@@ -1,0 +1,34 @@
+
+gorg.jqassistant.plugin.c4.C4ParseListener#processTech(Ljava/lang/String;Ljava/util/function/Consumer;)ZÜ
+z/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/C4ParseListener.javaê ê("1*±
+1
+ë ë(â
+Ü
+
+ë ë(2
+%0boolean"xorg.jqassistant.plugin.c4.C4ParseListener#processSet(Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Consumer;)Z*I
+
+__unknown_file (-+
+)org.jqassistant.plugin.c4.C4ParseListener*&
+
+__unknown_file (
+
+$techn*7
+
+__unknown_file (
+
+valuejava.lang.String*C
+
+__unknown_file ('
+%
+setterjava.util.function.Consumer"
+
+ë ë(3
+"":'
+
+ê  ê(-
+valuejava.lang.String:3
+
+ê. ê(J%
+setterjava.util.function.ConsumerB-+
+)org.jqassistant.plugin.c4.C4ParseListenerX

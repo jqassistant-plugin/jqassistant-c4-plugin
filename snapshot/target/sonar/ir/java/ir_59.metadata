@@ -1,0 +1,6 @@
+org.jqassistant.plugin.c4.data.AbstractBuildingBlock#getAdditionalStereotypes()Ljava/util/Set;
+java.util.LinkedHashSet#instance-init#
+java.util.LinkedHashSet#<init>()V
+==
+getPrimaryElementTypeLabel org.jqassistant.plugin.c4.data.AbstractBuildingBlock#getPrimaryElementTypeLabel()Ljava/lang/String;
+add java.util.Set#add(Ljava/lang/Object;)Z

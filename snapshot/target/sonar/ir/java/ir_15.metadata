@@ -1,0 +1,8 @@
+org.jqassistant.plugin.c4.C4ParseListener#exitComponent(Lorg/jqassistant/plugin/c4/antlr/C4Parser$ComponentContext;)V
+java.util.HashMap#<init>()V
+java.util.HashMap#instance-init#
+==
+add java.util.List#add(Ljava/lang/Object;)Z
+get java.util.ArrayList#get(I)Ljava/lang/Object;
+size java.util.ArrayList#size()I
+paramList org.jqassistant.plugin.c4.antlr.C4Parser$ComponentContext#paramList()Lorg/jqassistant/plugin/c4/antlr/C4Parser$ParamListContext;

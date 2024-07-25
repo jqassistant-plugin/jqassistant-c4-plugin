@@ -1,0 +1,32 @@
+
+Rorg.jqassistant.plugin.c4.data.ElementRelation#buildNameString()Ljava/lang/String;‰
+/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/ElementRelation.java3 3(""1*•
+14 4(…
+‚
+4 4(%
+%0java.lang.String"__id*X
+
+__unknown_file (<*:0
+.org.jqassistant.plugin.c4.data.ElementRelation"
+namen
+l
+4 4(%
+%1java.lang.String"__concat*
+4 4(
+
+name: \"*$
+4 4(%
+
+%0java.lang.Stringh
+f
+4 4(,
+%2java.lang.String"__concat*$
+4 4(%
+
+%1java.lang.String*
+4( 4(,
+\""$
+4 4(-
+
+%2java.lang.StringB20
+.org.jqassistant.plugin.c4.data.ElementRelation

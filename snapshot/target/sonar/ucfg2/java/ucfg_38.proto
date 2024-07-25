@@ -1,0 +1,15 @@
+
+\org.jqassistant.plugin.c4.data.AbstractBuildingBlock#buildExternalString()Ljava/lang/String;ê
+Ö/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/AbstractBuildingBlock.java+ +(&"1*ï
+1, ,(`
+^
+, ,(-
+%0java.lang.String"__concat*
+, ,(
+, external: *
+,  ,(-
+"""$
+, ,(.
+
+%0java.lang.StringB86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock

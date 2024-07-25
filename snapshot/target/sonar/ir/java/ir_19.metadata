@@ -1,0 +1,8 @@
+org.jqassistant.plugin.c4.C4ParseListener#exitBoundary(Lorg/jqassistant/plugin/c4/antlr/C4Parser$BoundaryContext;)V
+org.apache.commons.lang3.StringUtils#isNotEmpty(Ljava/lang/CharSequence;)Z
+==
+boundaryParamList org.jqassistant.plugin.c4.antlr.C4Parser$BoundaryContext#boundaryParamList()Lorg/jqassistant/plugin/c4/antlr/C4Parser$BoundaryParamListContext;
+genericBoundaryParamList org.jqassistant.plugin.c4.antlr.C4Parser$BoundaryContext#genericBoundaryParamList()Lorg/jqassistant/plugin/c4/antlr/C4Parser$GenericBoundaryParamListContext;
+add java.util.List#add(Ljava/lang/Object;)Z
+get java.util.ArrayList#get(I)Ljava/lang/Object;
+size java.util.ArrayList#size()I

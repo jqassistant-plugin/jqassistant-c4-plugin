@@ -1,0 +1,6 @@
+org.jqassistant.plugin.c4.C4DiagramPersister#persist(Lorg/jqassistant/plugin/c4/data/C4Diagram;)Lorg/jqassistant/plugin/c4/model/C4DiagramDescriptor;
+org.jqassistant.plugin.c4.C4DiagramPersister#persistElements(Lorg/jqassistant/plugin/c4/model/C4DiagramDescriptor;Ljava/util/List;)Ljava/util/Map;
+org.jqassistant.plugin.c4.C4DiagramPersister#persistRelations(Ljava/util/Map;Ljava/util/List;)V
+==
+setName org.jqassistant.plugin.c4.model.C4DiagramDescriptor#setName(Ljava/lang/String;)V
+create com.buschmais.jqassistant.core.store.api.Store#create(Ljava/lang/Class;)Lcom/buschmais/jqassistant/core/store/api/model/Descriptor;

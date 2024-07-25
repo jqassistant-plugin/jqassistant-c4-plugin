@@ -1,0 +1,14 @@
+org.jqassistant.plugin.c4.C4DiagramPersister#persistElements(Lorg/jqassistant/plugin/c4/model/C4DiagramDescriptor;Ljava/util/List;)Ljava/util/Map;
+org.jqassistant.plugin.c4.C4DiagramPersister#createElement(Lorg/jqassistant/plugin/c4/model/C4DiagramDescriptor;Lorg/jqassistant/plugin/c4/data/AbstractElement;)Lorg/jqassistant/plugin/c4/model/ElementDescriptor;
+java.util.HashMap#<init>()V
+java.util.HashMap#instance-init#
+==
+getContainedPersons org.jqassistant.plugin.c4.model.ElementDescriptor#getContainedPersons()Ljava/util/List;
+put java.util.Map#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+getContainedComponents org.jqassistant.plugin.c4.model.ElementDescriptor#getContainedComponents()Ljava/util/List;
+getAlias org.jqassistant.plugin.c4.model.ElementDescriptor#getAlias()Ljava/lang/String;
+getContainedContainers org.jqassistant.plugin.c4.model.ElementDescriptor#getContainedContainers()Ljava/util/List;
+get java.util.Map#get(Ljava/lang/Object;)Ljava/lang/Object;
+add java.util.List#add(Ljava/lang/Object;)Z
+getContainedSystems org.jqassistant.plugin.c4.model.ElementDescriptor#getContainedSystems()Ljava/util/List;
+getContainedBoundaries org.jqassistant.plugin.c4.model.ElementDescriptor#getContainedBoundaries()Ljava/util/List;

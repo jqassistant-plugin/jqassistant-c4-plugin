@@ -1,0 +1,2 @@
+org.jqassistant.plugin.c4.C4ParseListener#processType(Ljava/lang/String;Ljava/util/function/Consumer;)Z
+org.jqassistant.plugin.c4.C4ParseListener#process(Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Consumer;)Z

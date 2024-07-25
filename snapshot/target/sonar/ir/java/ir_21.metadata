@@ -1,0 +1,6 @@
+org.jqassistant.plugin.c4.C4ParseListener#exitBiRel(Lorg/jqassistant/plugin/c4/antlr/C4Parser$BiRelContext;)V
+java.util.HashMap#<init>()V
+java.util.HashMap#instance-init#
+==
+add java.util.List#add(Ljava/lang/Object;)Z
+relParamList org.jqassistant.plugin.c4.antlr.C4Parser$BiRelContext#relParamList()Lorg/jqassistant/plugin/c4/antlr/C4Parser$RelParamListContext;

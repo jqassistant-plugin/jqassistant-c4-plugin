@@ -1,0 +1,32 @@
+
+Rorg.jqassistant.plugin.c4.data.AbstractElement#buildNameString()Ljava/lang/String;‰
+/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/AbstractElement.java' '( "1*—
+1( ((…
+‚
+( (('
+%0java.lang.String"__id*X
+
+__unknown_file (<*:0
+.org.jqassistant.plugin.c4.data.AbstractElement"
+namep
+n
+( (('
+%1java.lang.String"__concat*
+( ((
+
+, name: \"*$
+( (('
+
+%0java.lang.Stringh
+f
+( ((.
+%2java.lang.String"__concat*$
+( (('
+
+%1java.lang.String*
+(* ((.
+\""$
+( ((/
+
+%2java.lang.StringB20
+.org.jqassistant.plugin.c4.data.AbstractElement

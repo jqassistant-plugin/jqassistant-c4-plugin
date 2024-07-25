@@ -1,0 +1,7 @@
+org.jqassistant.plugin.c4.C4ParseListener#process(Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Consumer;)Z
+java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+java.lang.String#replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+java.lang.String#contains(Ljava/lang/CharSequence;)Z
+org.jqassistant.plugin.c4.C4ParseListener#normalize(Ljava/lang/String;)Ljava/lang/String;
+==
+accept java.util.function.Consumer#accept(Ljava/lang/Object;)V

@@ -1,0 +1,4 @@
+org.jqassistant.plugin.c4.C4ParseListener#exitHierarchy(Lorg/jqassistant/plugin/c4/antlr/C4Parser$HierarchyContext;)V
+==
+remove java.util.ArrayList#remove(I)Ljava/lang/Object;
+size java.util.ArrayList#size()I

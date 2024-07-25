@@ -1,0 +1,17 @@
+org.jqassistant.plugin.c4.C4DiagramParser#parseDiagram(Ljava/io/InputStream;Ljava/lang/String;)Lorg/jqassistant/plugin/c4/data/C4Diagram;
+null
+org.antlr.v4.runtime.ANTLRInputStream#<init>(Ljava/io/InputStream;)V
+org.jqassistant.plugin.c4.antlr.C4Lexer#instance-init#
+org.antlr.v4.runtime.ANTLRInputStream#instance-init#
+org.jqassistant.plugin.c4.antlr.C4Lexer#<init>(Lorg/antlr/v4/runtime/CharStream;)V
+org.antlr.v4.runtime.CommonTokenStream#<init>(Lorg/antlr/v4/runtime/TokenSource;)V
+org.jqassistant.plugin.c4.antlr.C4Parser#<init>(Lorg/antlr/v4/runtime/TokenStream;)V
+org.jqassistant.plugin.c4.antlr.C4Parser#instance-init#
+org.jqassistant.plugin.c4.C4ParseListener#<init>()V
+org.jqassistant.plugin.c4.antlr.C4Parser#c4()Lorg/jqassistant/plugin/c4/antlr/C4Parser$C4Context;
+org.antlr.v4.runtime.CommonTokenStream#instance-init#
+org.jqassistant.plugin.c4.C4ParseListener#instance-init#
+org.jqassistant.plugin.c4.data.C4Diagram#instance-init#
+==
+addErrorListener org.antlr.v4.runtime.Recognizer#addErrorListener(Lorg/antlr/v4/runtime/ANTLRErrorListener;)V
+addParseListener org.antlr.v4.runtime.Parser#addParseListener(Lorg/antlr/v4/runtime/tree/ParseTreeListener;)V

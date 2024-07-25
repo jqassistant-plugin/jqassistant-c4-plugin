@@ -1,0 +1,31 @@
+
+Sorg.jqassistant.plugin.c4.data.AbstractElement#buildAliasString()Ljava/lang/String;‰
+/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/AbstractElement.java# #(!"1*—
+1$ $(†
+ƒ
+$ $('
+%0java.lang.String"__id*Y
+
+__unknown_file (=*;0
+.org.jqassistant.plugin.c4.data.AbstractElement"
+aliaso
+m
+$ $('
+%1java.lang.String"__concat*
+$ $(
+	alias: \"*$
+$ $('
+
+%0java.lang.Stringh
+f
+$ $(.
+%2java.lang.String"__concat*$
+$ $('
+
+%1java.lang.String*
+$* $(.
+\""$
+$ $(/
+
+%2java.lang.StringB20
+.org.jqassistant.plugin.c4.data.AbstractElement

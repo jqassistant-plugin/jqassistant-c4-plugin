@@ -1,0 +1,86 @@
+
+borg.jqassistant.plugin.c4.data.AbstractBuildingBlock#buildStringRepresentation()Ljava/lang/String;ê
+Ö/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/AbstractBuildingBlock.java (+"1*Ω
+1 (‰·
+   ("
+%0java.lang.String"Sorg.jqassistant.plugin.c4.data.AbstractElement#buildLabelString()Ljava/lang/String;*T
+
+__unknown_file (86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock2buildLabelString()‰·
+ $  (6
+%1java.lang.String"Sorg.jqassistant.plugin.c4.data.AbstractElement#buildAliasString()Ljava/lang/String;*T
+
+__unknown_file (86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock2buildAliasString()‚ﬂ
+ 8  (I
+%2java.lang.String"Rorg.jqassistant.plugin.c4.data.AbstractElement#buildNameString()Ljava/lang/String;*T
+
+__unknown_file (86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock2buildNameString()‹
+Ÿ
+ K  (c
+%3java.lang.String"_org.jqassistant.plugin.c4.data.AbstractBuildingBlock#buildDescriptionString()Ljava/lang/String;*T
+
+__unknown_file (86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock›
+⁄
+ e  (~
+%4java.lang.String"`org.jqassistant.plugin.c4.data.AbstractBuildingBlock#buildTechnologiesString()Ljava/lang/String;*T
+
+__unknown_file (86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock€
+ÿ
+
+ Ä  (ï
+%5java.lang.String"\org.jqassistant.plugin.c4.data.AbstractBuildingBlock#buildExternalString()Ljava/lang/String;*T
+
+__unknown_file (86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock›
+⁄
+
+ ó  (Æ
+%6java.lang.String"^org.jqassistant.plugin.c4.data.AbstractBuildingBlock#buildPropertiesString()Ljava/lang/String;*T
+
+__unknown_file (86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlock÷
+”
+	  (Ø
+%7java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*0
+
+__unknown_file ("
+java.lang.String*0
+
+__unknown_file (
+%s{%s%s%s%s%s%s}*4
+
+__unknown_file (
+
+%0java.lang.String*4
+
+__unknown_file (
+
+%1java.lang.String*4
+
+__unknown_file (
+
+%2java.lang.String*4
+
+__unknown_file (
+
+%3java.lang.String*4
+
+__unknown_file (
+
+%4java.lang.String*4
+
+__unknown_file (
+
+%5java.lang.String*4
+
+__unknown_file (
+
+%6java.lang.String"%
+	  (∞
+
+%7java.lang.StringB86
+4org.jqassistant.plugin.c4.data.AbstractBuildingBlockH

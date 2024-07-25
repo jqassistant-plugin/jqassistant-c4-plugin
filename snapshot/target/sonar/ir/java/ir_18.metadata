@@ -1,0 +1,8 @@
+org.jqassistant.plugin.c4.C4ParseListener#exitPerson(Lorg/jqassistant/plugin/c4/antlr/C4Parser$PersonContext;)V
+java.util.HashMap#<init>()V
+java.util.HashMap#instance-init#
+==
+add java.util.List#add(Ljava/lang/Object;)Z
+get java.util.ArrayList#get(I)Ljava/lang/Object;
+size java.util.ArrayList#size()I
+systemParamList org.jqassistant.plugin.c4.antlr.C4Parser$PersonContext#systemParamList()Lorg/jqassistant/plugin/c4/antlr/C4Parser$SystemParamListContext;

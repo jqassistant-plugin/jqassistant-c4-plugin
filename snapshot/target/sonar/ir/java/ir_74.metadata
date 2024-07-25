@@ -1,0 +1,11 @@
+org.jqassistant.plugin.c4.data.ElementRelation#buildStringRepresentation(Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/String;
+org.jqassistant.plugin.c4.data.ElementRelation#buildTechnologiesString()Ljava/lang/String;
+org.jqassistant.plugin.c4.data.ElementRelation#buildNameString()Ljava/lang/String;
+org.jqassistant.plugin.c4.data.ElementRelation#buildPropertiesString()Ljava/lang/String;
+org.jqassistant.plugin.c4.data.ElementRelation#buildDescriptionString()Ljava/lang/String;
+java.util.Optional#get()Ljava/lang/Object;
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+==
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+size java.util.Set#size()I
+findFirst java.util.stream.Stream#findFirst()Ljava/util/Optional;

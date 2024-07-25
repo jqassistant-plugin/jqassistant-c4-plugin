@@ -1,0 +1,213 @@
+
+ org.jqassistant.plugin.c4.data.ElementRelation#buildStringRepresentation(Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/String;‰
+/home/runner/work/jqassistant-c4-plugin/jqassistant-c4-plugin/src/main/java/org/jqassistant/plugin/c4/data/ElementRelation.java$ $(+"6*m
+2, ,( Y
+W
+, ,( 
+labeljava.lang.String"__id**
+
+__unknown_file (
+
+DEPENDS_ON*
+1*ï
+3* *(Š
+‡
+* *(
+%10java.util.Set"__id*_
+
+__unknown_file (C*A0
+.org.jqassistant.plugin.c4.data.ElementRelation"
+stereotypes£ 
+* *((
+%11java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
+
+__unknown_file (
+
+%10java.util.Set2stream()¬©
+* *(4
+%12java.util.Optional"7java.util.stream.Stream#findFirst()Ljava/util/Optional;*<
+
+__unknown_file ( 
+
+%11java.util.stream.Stream2findFirst()’
+* *(:
+%13java.lang.String"*java.util.Optional#get()Ljava/lang/Object;*7
+
+__unknown_file (
+
+%12java.util.Optional2get()d
+b
+* *(:
+labeljava.lang.String"__id*5
+
+__unknown_file (
+
+%13java.lang.String*
+1*¥
+4) )(‰
+†
+) )(
+%7java.util.Set"__id*_
+
+__unknown_file (C*A0
+.org.jqassistant.plugin.c4.data.ElementRelation"
+stereotypesig
+) )(%	
+%8int"java.util.Set#size()I*1
+
+__unknown_file (
+
+%7java.util.Set2size()–
+“
+) )(*
+%9boolean"	__compare*"
+
+__unknown_file (
+==*'
+
+__unknown_file (
+	
+%8int* 
+
+__unknown_file (2*
+2
+3*ç
+5' '(‰
+†
+' '(
+%3java.util.Set"__id*_
+
+__unknown_file (C*A0
+.org.jqassistant.plugin.c4.data.ElementRelation"
+stereotypes¡ž
+' '((
+%4java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*1
+
+__unknown_file (
+
+%3java.util.Set2stream()ª§
+' '(4
+%5java.util.Optional"7java.util.stream.Stream#findFirst()Ljava/util/Optional;*;
+
+__unknown_file (
+
+%4java.util.stream.Stream2findFirst()
+' '(:
+%6java.lang.String"*java.util.Optional#get()Ljava/lang/Object;*6
+
+__unknown_file (
+
+%5java.util.Optional2get()c
+a
+' '(:
+labeljava.lang.String"__id*4
+
+__unknown_file (
+
+%6java.lang.String*
+1*÷
+6% %(Q
+O
+% %(
+labeljava.lang.String"__id*"
+
+__unknown_file (
+""‰
+†
+& &(
+%0java.util.Set"__id*_
+
+__unknown_file (C*A0
+.org.jqassistant.plugin.c4.data.ElementRelation"
+stereotypesig
+& &(	
+%1int"java.util.Set#size()I*1
+
+__unknown_file (
+
+%0java.util.Set2size()•
+’
+& &("
+%2boolean"	__compare*!
+
+__unknown_file (
+>*'
+
+__unknown_file (
+	
+%1int* 
+
+__unknown_file (2*
+4
+5*ñ
+
+10 0(Ê
+Ç
+05 0(F
+%14java.lang.String"Rorg.jqassistant.plugin.c4.data.ElementRelation#buildNameString()Ljava/lang/String;*N
+
+__unknown_file (20
+.org.jqassistant.plugin.c4.data.ElementRelationÑ
+Î
+0H 0(`
+%15java.lang.String"Yorg.jqassistant.plugin.c4.data.ElementRelation#buildDescriptionString()Ljava/lang/String;*N
+
+__unknown_file (20
+.org.jqassistant.plugin.c4.data.ElementRelationÒ
+Ï
+0b 0({
+%16java.lang.String"Zorg.jqassistant.plugin.c4.data.ElementRelation#buildTechnologiesString()Ljava/lang/String;*N
+
+__unknown_file (20
+.org.jqassistant.plugin.c4.data.ElementRelationÑ
+Î
+	0} 0(”
+%17java.lang.String"Xorg.jqassistant.plugin.c4.data.ElementRelation#buildPropertiesString()Ljava/lang/String;*N
+
+__unknown_file (20
+.org.jqassistant.plugin.c4.data.ElementRelationï
+ì
+	0 0(•
+%18java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*0
+
+__unknown_file ("
+java.lang.String*-
+
+__unknown_file (
+:%s{%s%s%s%s}*7
+
+__unknown_file (
+
+labeljava.lang.String*5
+
+__unknown_file (
+
+%14java.lang.String*5
+
+__unknown_file (
+
+%15java.lang.String*5
+
+__unknown_file (
+
+%16java.lang.String*5
+
+__unknown_file (
+
+%17java.lang.String"&
+	0 0(–
+
+%18java.lang.String:*
+$, $(>
+
+sourceNamejava.lang.String:(
+$? $(O
+
+sourceNodejava.lang.Long:*
+$P $(b
+
+targetNamejava.lang.String:(
+$c $(r
+
+targetNodejava.lang.LongB20
+.org.jqassistant.plugin.c4.data.ElementRelationH
