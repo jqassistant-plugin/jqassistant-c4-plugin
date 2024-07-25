@@ -30,8 +30,8 @@ jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElem
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement,2,33,0,0,1,6,1,1,1,1
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,SecondaryElementType,0,37,0,0,0,5,0,3,0,3
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement,2,54,0,0,1,6,1,1,1,1
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,SecondaryElementType,0,50,0,0,0,5,0,3,0,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,System.SystemBuilderImpl,0,7,0,0,0,1,0,2,0,2
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Component.ComponentBuilder,4,3,0,0,0,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Boundary.BoundaryBuilderImpl,0,7,0,0,0,1,0,2,0,2
