@@ -43,14 +43,14 @@ jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractElement,3,67,0,2,1,
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,System,0,10,0,0,0,2,0,3,0,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Container,0,10,0,0,0,2,0,3,0,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Container.ContainerBuilder,4,3,0,0,0,1,1,1,1,1
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractBuildingBlock.AbstractBuildingBlockBuilder,17,36,0,0,0,1,1,6,1,6
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractBuildingBlock.AbstractBuildingBlockBuilder,14,36,0,0,0,1,1,6,1,6
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Boundary.BoundaryBuilder,6,9,0,0,0,1,1,2,1,2
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractBuildingBlock,0,164,1,11,0,21,1,15,0,10
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Boundary,0,50,1,1,0,7,1,4,0,4
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Component,0,10,0,0,0,2,0,3,0,3
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractElement.AbstractElementBuilder,12,30,0,0,0,1,1,5,1,5
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractElement.AbstractElementBuilder,10,30,0,0,0,1,1,5,1,5
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Container.ContainerBuilderImpl,0,7,0,0,0,1,0,2,0,2
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,ElementRelation.ElementRelationBuilder,19,76,0,4,0,1,1,11,1,9
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,ElementRelation.ElementRelationBuilder,16,76,0,4,0,1,1,11,1,9
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,ElementRelation,29,193,2,8,3,22,2,18,0,15
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,C4Diagram,0,21,0,0,0,4,0,4,0,4
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,System.SystemBuilder,4,3,0,0,0,1,1,1,1,1
