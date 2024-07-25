@@ -1,4 +1,4 @@
-// Generated from org/jqassistant/plugin/c4/antlr/C4.g4 by ANTLR 4.7.2
+// Generated from org/jqassistant/plugin/c4/antlr/C4.g4 by ANTLR 4.13.1
 package org.jqassistant.plugin.c4.antlr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
