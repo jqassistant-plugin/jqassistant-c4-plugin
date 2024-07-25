@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.jqassistant.plugin.c4.C4DiagramScannerPluginIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.37 s -- in org.jqassistant.plugin.c4.C4DiagramScannerPluginIT

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>C4ParseListener.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-c4-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.c4</a> &gt; <span class="el_source">C4ParseListener.java</span></div><h1>C4ParseListener.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.c4;
+
+import lombok.Getter;
+import org.antlr.v4.runtime.Token;
+import org.apache.commons.lang3.StringUtils;
+import org.jqassistant.plugin.c4.antlr.C4BaseListener;
+import org.jqassistant.plugin.c4.antlr.C4Parser;
+import org.jqassistant.plugin.c4.data.System;
+import org.jqassistant.plugin.c4.data.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Consumer;
+
+import static java.util.Arrays.stream;
+import static java.util.stream.Collectors.toSet;
+
+/**
+ * Parse listener to hook into Antlr parsing.
+ *
+ * @author Stephan Pirnbaum
+ */
+<span class="fc" id="L27">public class C4ParseListener extends C4BaseListener {</span>
+
+<span class="fc" id="L29">    @Getter</span>
+    private String name;
+<span class="fc" id="L31">    @Getter</span>
+    private final List&lt;AbstractElement&gt; c4Elements = new ArrayList&lt;&gt;();
+<span class="fc" id="L33">    @Getter</span>
+    private final List&lt;ElementRelation&gt; c4ElementRelations = new ArrayList&lt;&gt;();
+
+<span class="fc" id="L36">    private final ArrayList&lt;AbstractElement&gt; parentHierarchy = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L37">    private Map&lt;String, String&gt; properties = new LinkedHashMap&lt;&gt;();</span>
+
+    @Override
+    public void exitC4(C4Parser.C4Context ctx) {
+<span class="fc" id="L41">        this.name = normalize(ctx.name);</span>
+<span class="fc" id="L42">    }</span>
+
+    @Override
+    public void enterHierarchy(C4Parser.HierarchyContext ctx) {
+<span class="fc" id="L46">        parentHierarchy.add(c4Elements.get(c4Elements.size() - 1));</span>
+<span class="fc" id="L47">    }</span>
+
+    @Override
+    public void exitHierarchy(C4Parser.HierarchyContext ctx) {
+<span class="fc" id="L51">        parentHierarchy.remove(parentHierarchy.size() - 1);</span>
+<span class="fc" id="L52">    }</span>
+
+    @Override
+    public void exitAddProperty(C4Parser.AddPropertyContext ctx) {
+<span class="fc" id="L56">        properties.put(normalize(ctx.key), normalize(ctx.value));</span>
+<span class="fc" id="L57">    }</span>
+
+    @Override
+    public void exitComponent(C4Parser.ComponentContext ctx) {
+<span class="fc" id="L61">        Component.ComponentBuilder&lt;?, ?&gt; builder = Component.builder()</span>
+<span class="fc" id="L62">                .secondaryElementType(ctx.secondaryType)</span>
+<span class="fc" id="L63">                .external(ctx.external)</span>
+<span class="fc" id="L64">                .properties(properties);</span>
+
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (parentHierarchy.size() &gt; 0) {</span>
+<span class="fc" id="L67">            builder.parent(parentHierarchy.get(parentHierarchy.size() - 1));</span>
+        }
+<span class="fc" id="L69">        AbstractBuildingBlock element = processParameters(builder, ctx.paramList());</span>
+
+<span class="fc" id="L71">        c4Elements.add(element);</span>
+<span class="fc" id="L72">        properties = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L73">    }</span>
+
+    @Override
+    public void exitContainer(C4Parser.ContainerContext ctx) {
+<span class="fc" id="L77">        Container.ContainerBuilder&lt;?, ?&gt; builder = Container.builder()</span>
+<span class="fc" id="L78">                .secondaryElementType(ctx.secondaryType)</span>
+<span class="fc" id="L79">                .external(ctx.external)</span>
+<span class="fc" id="L80">                .properties(properties);</span>
+
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        if (parentHierarchy.size() &gt; 0) {</span>
+<span class="nc" id="L83">            builder.parent(parentHierarchy.get(parentHierarchy.size() - 1));</span>
+        }
+
+<span class="fc" id="L86">        AbstractBuildingBlock element = processParameters(builder, ctx.paramList());</span>
+
+<span class="fc" id="L88">        c4Elements.add(element);</span>
+<span class="fc" id="L89">        properties = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L90">    }</span>
+
+    @Override
+    public void exitSystem(C4Parser.SystemContext ctx) {
+<span class="fc" id="L94">        System.SystemBuilder&lt;?, ?&gt; builder = System.builder()</span>
+<span class="fc" id="L95">                .secondaryElementType(ctx.secondaryType)</span>
+<span class="fc" id="L96">                .external(ctx.external)</span>
+<span class="fc" id="L97">                .properties(properties);</span>
+
+<span class="fc bfc" id="L99" title="All 2 branches covered.">        if (parentHierarchy.size() &gt; 0) {</span>
+<span class="fc" id="L100">            builder.parent(parentHierarchy.get(parentHierarchy.size() - 1));</span>
+        }
+
+<span class="fc" id="L103">        AbstractBuildingBlock element = processParameters(builder, ctx.systemParamList());</span>
+
+<span class="fc" id="L105">        c4Elements.add(element);</span>
+<span class="fc" id="L106">        properties = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L107">    }</span>
+
+    @Override
+    public void exitPerson(C4Parser.PersonContext ctx) {
+<span class="fc" id="L111">        Person.PersonBuilder&lt;?, ?&gt; builder = Person.builder()</span>
+<span class="fc" id="L112">                .external(ctx.external)</span>
+<span class="fc" id="L113">                .properties(properties);</span>
+
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">        if (parentHierarchy.size() &gt; 0) {</span>
+<span class="nc" id="L116">            builder.parent(parentHierarchy.get(parentHierarchy.size() - 1));</span>
+        }
+
+<span class="fc" id="L119">        AbstractBuildingBlock element = processParameters(builder, ctx.systemParamList());</span>
+
+<span class="fc" id="L121">        c4Elements.add(element);</span>
+<span class="fc" id="L122">        properties = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L123">    }</span>
+
+    @Override
+    public void exitBoundary(C4Parser.BoundaryContext ctx) {
+        Boundary.BoundaryBuilder&lt;?, ?&gt; builder;
+
+<span class="fc bfc" id="L129" title="All 2 branches covered.">        if (StringUtils.isNotEmpty(ctx.type)) {</span>
+<span class="fc" id="L130">            builder = Boundary.builder()</span>
+<span class="fc" id="L131">                    .type(ctx.type);</span>
+<span class="fc" id="L132">            processParameters(builder, ctx.boundaryParamList());</span>
+        } else {
+<span class="fc" id="L134">            builder = Boundary.builder();</span>
+<span class="fc" id="L135">            processParameters(builder, ctx.genericBoundaryParamList());</span>
+        }
+
+<span class="fc bfc" id="L138" title="All 2 branches covered.">        if (parentHierarchy.size() &gt; 0) {</span>
+<span class="fc" id="L139">            builder.parent(parentHierarchy.get(parentHierarchy.size() - 1));</span>
+        }
+
+<span class="fc" id="L142">        c4Elements.add(builder.build());</span>
+<span class="fc" id="L143">    }</span>
+
+    private void processParameters(Boundary.BoundaryBuilder&lt;?, ?&gt; builder, C4Parser.BoundaryParamListContext boundaryParamList) {
+<span class="pc bpc" id="L146" title="2 of 4 branches missed.">        if (boundaryParamList.p1 != null &amp;&amp; StringUtils.isNotEmpty(boundaryParamList.p1.getText())) { // potentially alias</span>
+<span class="fc" id="L147">            String p = boundaryParamList.p1.getText();</span>
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L149">                builder.alias(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L152" title="2 of 4 branches missed.">        if (boundaryParamList.p2 != null &amp;&amp; StringUtils.isNotEmpty(boundaryParamList.p2.getText())) { // potentially label</span>
+<span class="fc" id="L153">            String p = boundaryParamList.p2.getText();</span>
+<span class="pc bpc" id="L154" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L155">                builder.name(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L158" title="1 of 4 branches missed.">        if (boundaryParamList.p3 != null &amp;&amp; StringUtils.isNotEmpty(boundaryParamList.p3.getText())) { // potentially tags</span>
+<span class="fc" id="L159">            String p = normalize(boundaryParamList.p3.getText());</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L161">                processSet(&quot;&quot;, p, builder::stereotypes);</span>
+            }
+        }
+<span class="pc bpc" id="L164" title="3 of 4 branches missed.">        if (boundaryParamList.p4 != null &amp;&amp; StringUtils.isNotEmpty(boundaryParamList.p4.getText())) { // potentially link</span>
+<span class="nc" id="L165">            String p = normalize(boundaryParamList.p4.getText());</span>
+<span class="nc" id="L166">            setSpecifiedProperty(p, builder);</span>
+        }
+
+<span class="fc" id="L169">    }</span>
+
+    private void processParameters(Boundary.BoundaryBuilder&lt;?, ?&gt; builder, C4Parser.GenericBoundaryParamListContext genericBoundaryParamList) {
+<span class="pc bpc" id="L172" title="2 of 4 branches missed.">        if (genericBoundaryParamList.p1 != null &amp;&amp; StringUtils.isNotEmpty(genericBoundaryParamList.p1.getText())) { // potentially alias</span>
+<span class="fc" id="L173">            String p = genericBoundaryParamList.p1.getText();</span>
+<span class="pc bpc" id="L174" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L175">                builder.alias(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L178" title="2 of 4 branches missed.">        if (genericBoundaryParamList.p2 != null &amp;&amp; StringUtils.isNotEmpty(genericBoundaryParamList.p2.getText())) { // potentially label</span>
+<span class="fc" id="L179">            String p = genericBoundaryParamList.p2.getText();</span>
+<span class="pc bpc" id="L180" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L181">                builder.name(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L184" title="2 of 4 branches missed.">        if (genericBoundaryParamList.p3 != null &amp;&amp; StringUtils.isNotEmpty(genericBoundaryParamList.p3.getText())) { // potentially type</span>
+<span class="fc" id="L185">            String p = normalize(genericBoundaryParamList.p3.getText());</span>
+<span class="pc bpc" id="L186" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L187">                builder.type(p);</span>
+            }
+        }
+<span class="pc bpc" id="L190" title="2 of 4 branches missed.">        if (genericBoundaryParamList.p4 != null &amp;&amp; StringUtils.isNotEmpty(genericBoundaryParamList.p4.getText())) { // potentially tags</span>
+<span class="fc" id="L191">            String p = normalize(genericBoundaryParamList.p4.getText());</span>
+<span class="pc bpc" id="L192" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="nc" id="L193">                processSet(&quot;&quot;, p, builder::stereotypes);</span>
+            }
+        }
+<span class="pc bpc" id="L196" title="3 of 4 branches missed.">        if (genericBoundaryParamList.p5 != null &amp;&amp; StringUtils.isNotEmpty(genericBoundaryParamList.p5.getText())) { // potentially link</span>
+<span class="nc" id="L197">            String p = normalize(genericBoundaryParamList.p5.getText());</span>
+<span class="nc" id="L198">            setSpecifiedProperty(p, builder);</span>
+        }
+
+<span class="fc" id="L201">    }</span>
+
+    private AbstractBuildingBlock processParameters(AbstractBuildingBlock.AbstractBuildingBlockBuilder&lt;?, ?&gt; builder, C4Parser.ParamListContext paramListContext) {
+<span class="pc bpc" id="L204" title="2 of 4 branches missed.">        if (paramListContext.p1 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p1.getText())) { // potentially alias</span>
+<span class="fc" id="L205">            String p = paramListContext.p1.getText();</span>
+<span class="fc bfc" id="L206" title="All 2 branches covered.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L207">                builder.alias(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L210" title="2 of 4 branches missed.">        if (paramListContext.p2 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p2.getText())) { // potentially label</span>
+<span class="fc" id="L211">            String p = paramListContext.p2.getText();</span>
+<span class="fc bfc" id="L212" title="All 2 branches covered.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L213">                builder.name(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L216" title="1 of 4 branches missed.">        if (paramListContext.p3 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p3.getText())) { // potentially tech</span>
+<span class="fc" id="L217">            String p = paramListContext.p3.getText();</span>
+<span class="fc bfc" id="L218" title="All 2 branches covered.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L219">                processSet(&quot;&quot;, p, builder::technologies);</span>
+            }
+        }
+<span class="pc bpc" id="L222" title="1 of 4 branches missed.">        if (paramListContext.p4 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p4.getText())) { // potentially description</span>
+<span class="fc" id="L223">            String p = paramListContext.p4.getText();</span>
+<span class="fc bfc" id="L224" title="All 2 branches covered.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L225">                builder.description(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L228" title="1 of 4 branches missed.">        if (paramListContext.p5 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p5.getText())) { // potentially sprite</span>
+<span class="fc" id="L229">            String p = paramListContext.p5.getText();</span>
+<span class="fc" id="L230">            setSpecifiedProperty(p, builder);</span>
+        }
+<span class="pc bpc" id="L232" title="1 of 4 branches missed.">        if (paramListContext.p6 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p6.getText())) { // potentially tags</span>
+<span class="fc" id="L233">            String p = paramListContext.p6.getText();</span>
+<span class="fc bfc" id="L234" title="All 2 branches covered.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L235">                processSet(&quot;&quot;, p, builder::stereotypes);</span>
+            }
+        }
+<span class="pc bpc" id="L238" title="3 of 4 branches missed.">        if (paramListContext.p7 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p7.getText())) { // potentially links</span>
+<span class="nc" id="L239">            String p = paramListContext.p7.getText();</span>
+<span class="nc" id="L240">            setSpecifiedProperty(p, builder);</span>
+        }
+<span class="fc" id="L242">        return builder.build();</span>
+    }
+
+    private AbstractBuildingBlock processParameters(AbstractBuildingBlock.AbstractBuildingBlockBuilder&lt;?, ?&gt; builder, C4Parser.SystemParamListContext paramListContext) {
+<span class="pc bpc" id="L246" title="2 of 4 branches missed.">        if (paramListContext.p1 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p1.getText())) { // potentially alias</span>
+<span class="fc" id="L247">            String p = paramListContext.p1.getText();</span>
+<span class="pc bpc" id="L248" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L249">                builder.alias(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L252" title="2 of 4 branches missed.">        if (paramListContext.p2 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p2.getText())) { // potentially label</span>
+<span class="fc" id="L253">            String p = paramListContext.p2.getText();</span>
+<span class="pc bpc" id="L254" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L255">                builder.name(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L258" title="1 of 4 branches missed.">        if (paramListContext.p3 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p3.getText())) { // potentially description</span>
+<span class="fc" id="L259">            String p = paramListContext.p3.getText();</span>
+<span class="pc bpc" id="L260" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L261">                builder.description(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L264" title="1 of 4 branches missed.">        if (paramListContext.p4 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p4.getText())) { // potentially sprite</span>
+<span class="fc" id="L265">            String p = paramListContext.p4.getText();</span>
+<span class="fc" id="L266">            setSpecifiedProperty(p, builder);</span>
+        }
+<span class="pc bpc" id="L268" title="1 of 4 branches missed.">        if (paramListContext.p5 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p5.getText())) { // potentially tags</span>
+<span class="fc" id="L269">            String p = paramListContext.p5.getText();</span>
+<span class="pc bpc" id="L270" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L271">                processSet(&quot;&quot;, p, builder::stereotypes);</span>
+            }
+        }
+<span class="pc bpc" id="L274" title="3 of 4 branches missed.">        if (paramListContext.p6 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p6.getText())) { // potentially links</span>
+<span class="nc" id="L275">            String p = paramListContext.p6.getText();</span>
+<span class="nc" id="L276">            setSpecifiedProperty(p, builder);</span>
+        }
+<span class="fc" id="L278">        return builder.build();</span>
+    }
+
+    @Override
+    public void exitRel(C4Parser.RelContext ctx) {
+<span class="fc" id="L283">        ElementRelation.ElementRelationBuilder builder = ElementRelation.builder()</span>
+<span class="fc" id="L284">                .properties(properties);</span>
+
+<span class="fc" id="L286">        ElementRelation relation = processParameters(builder, ctx.relParamList());</span>
+
+<span class="fc" id="L288">        c4ElementRelations.add(relation);</span>
+<span class="fc" id="L289">        properties = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L290">    }</span>
+
+    @Override
+    public void exitBiRel(C4Parser.BiRelContext ctx) {
+<span class="fc" id="L294">        ElementRelation.ElementRelationBuilder builder1 = ElementRelation.builder()</span>
+<span class="fc" id="L295">                .properties(properties);</span>
+
+<span class="fc" id="L297">        ElementRelation relation1 = processParameters(builder1, ctx.relParamList());</span>
+<span class="fc" id="L298">        c4ElementRelations.add(relation1);</span>
+
+<span class="fc" id="L300">        ElementRelation relation2 = relation1.toBuilder()</span>
+<span class="fc" id="L301">                .from(relation1.getTo())</span>
+<span class="fc" id="L302">                .to(relation1.getFrom())</span>
+<span class="fc" id="L303">                .build();</span>
+<span class="fc" id="L304">        c4ElementRelations.add(relation2);</span>
+<span class="fc" id="L305">        properties = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L306">    }</span>
+
+    private ElementRelation processParameters(ElementRelation.ElementRelationBuilder builder, C4Parser.RelParamListContext paramListContext) {
+<span class="pc bpc" id="L309" title="2 of 4 branches missed.">        if (paramListContext.p1 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p1.getText())) { // potentially from</span>
+<span class="fc" id="L310">            String p = paramListContext.p1.getText();</span>
+<span class="pc bpc" id="L311" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L312">                builder.from(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L315" title="2 of 4 branches missed.">        if (paramListContext.p2 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p2.getText())) { // potentially to</span>
+<span class="fc" id="L316">            String p = paramListContext.p2.getText();</span>
+<span class="pc bpc" id="L317" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L318">                builder.to(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L321" title="2 of 4 branches missed.">        if (paramListContext.p3 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p3.getText())) { // potentially label</span>
+<span class="fc" id="L322">            String p = paramListContext.p3.getText();</span>
+<span class="pc bpc" id="L323" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L324">                builder.name(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L327" title="1 of 4 branches missed.">        if (paramListContext.p4 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p4.getText())) { // potentially technology</span>
+<span class="fc" id="L328">            String p = paramListContext.p4.getText();</span>
+<span class="fc bfc" id="L329" title="All 2 branches covered.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="fc" id="L330">                processSet(&quot;&quot;, p, builder::technologies);</span>
+            }
+        }
+<span class="pc bpc" id="L333" title="1 of 4 branches missed.">        if (paramListContext.p5 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p5.getText())) { // potentially description</span>
+<span class="fc" id="L334">            String p = paramListContext.p5.getText();</span>
+<span class="pc bpc" id="L335" title="1 of 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="nc" id="L336">                builder.description(normalize(p));</span>
+            }
+        }
+<span class="pc bpc" id="L339" title="3 of 4 branches missed.">        if (paramListContext.p6 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p6.getText())) { // potentially sprite</span>
+<span class="nc" id="L340">            String p = paramListContext.p6.getText();</span>
+<span class="nc" id="L341">            setSpecifiedProperty(p, builder);</span>
+        }
+<span class="pc bpc" id="L343" title="3 of 4 branches missed.">        if (paramListContext.p7 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p7.getText())) { // potentially tags</span>
+<span class="nc" id="L344">            String p = paramListContext.p7.getText();</span>
+<span class="nc bnc" id="L345" title="All 2 branches missed.">            if (!setSpecifiedProperty(p, builder)) {</span>
+<span class="nc" id="L346">                processSet(&quot;&quot;, p, builder::stereotypes);</span>
+            }
+        }
+<span class="pc bpc" id="L349" title="3 of 4 branches missed.">        if (paramListContext.p8 != null &amp;&amp; StringUtils.isNotEmpty(paramListContext.p8.getText())) { // potentially links</span>
+<span class="nc" id="L350">            String p = paramListContext.p8.getText();</span>
+<span class="nc" id="L351">            setSpecifiedProperty(p, builder);</span>
+        }
+<span class="fc" id="L353">        return builder.build();</span>
+    }
+
+    private boolean setSpecifiedProperty(String value, Boundary.BoundaryBuilder&lt;?, ?&gt; builder) {
+<span class="pc bpc" id="L357" title="1 of 2 branches missed.">        return processAlias(value, builder::alias) ||</span>
+<span class="pc bpc" id="L358" title="1 of 2 branches missed.">                processLabel(value, builder::name) ||</span>
+<span class="fc bfc" id="L359" title="All 2 branches covered.">                processTags(value, builder::stereotypes) ||</span>
+<span class="pc bpc" id="L360" title="1 of 2 branches missed.">                processType(value, builder::type) ||</span>
+<span class="pc bpc" id="L361" title="1 of 2 branches missed.">                value.contains(&quot;$link&quot;);</span>
+    }
+
+    private boolean setSpecifiedProperty(String value, AbstractBuildingBlock.AbstractBuildingBlockBuilder&lt;?, ?&gt; builder) {
+<span class="fc bfc" id="L365" title="All 2 branches covered.">        return processAlias(value, builder::alias) ||</span>
+<span class="fc bfc" id="L366" title="All 2 branches covered.">                processLabel(value, builder::name) ||</span>
+<span class="pc bpc" id="L367" title="1 of 2 branches missed.">                processTech(value, builder::technologies) ||</span>
+<span class="fc bfc" id="L368" title="All 2 branches covered.">                processTags(value, builder::stereotypes) ||</span>
+<span class="fc bfc" id="L369" title="All 2 branches covered.">                processDescription(value, builder::description) ||</span>
+<span class="fc bfc" id="L370" title="All 2 branches covered.">                value.contains(&quot;$sprite&quot;) ||</span>
+<span class="pc bpc" id="L371" title="1 of 2 branches missed.">                value.contains(&quot;$link&quot;);</span>
+    }
+
+    private boolean setSpecifiedProperty(String value, ElementRelation.ElementRelationBuilder builder) {
+<span class="pc bpc" id="L375" title="1 of 2 branches missed.">        return processFrom(value, builder::from) ||</span>
+<span class="pc bpc" id="L376" title="1 of 2 branches missed.">                processTo(value, builder::to) ||</span>
+<span class="pc bpc" id="L377" title="1 of 2 branches missed.">                processLabel(value, builder::name) ||</span>
+<span class="fc bfc" id="L378" title="All 2 branches covered.">                processTags(value, builder::stereotypes) ||</span>
+<span class="pc bpc" id="L379" title="1 of 2 branches missed.">                processDescription(value, builder::description) ||</span>
+<span class="pc bpc" id="L380" title="1 of 2 branches missed.">                value.contains(&quot;$sprite&quot;) ||</span>
+<span class="pc bpc" id="L381" title="1 of 2 branches missed.">                value.contains(&quot;$link&quot;);</span>
+    }
+
+    private boolean processAlias(String value, Consumer&lt;String&gt; setter) {
+<span class="fc" id="L385">        return process(&quot;$alias&quot;, value, setter);</span>
+    }
+
+    private boolean processLabel(String value, Consumer&lt;String&gt; setter) {
+<span class="fc" id="L389">        return process(&quot;$label&quot;, value, setter);</span>
+    }
+
+    private boolean processDescription(String value, Consumer&lt;String&gt; setter) {
+<span class="fc" id="L393">        return process(&quot;$descr&quot;, value, setter);</span>
+    }
+
+    private boolean processTags(String value, Consumer&lt;Set&lt;String&gt;&gt; setter) {
+<span class="fc" id="L397">        return processSet(&quot;$tags&quot;, value, setter);</span>
+    }
+
+    private boolean processTech(String value, Consumer&lt;Set&lt;String&gt;&gt; setter) {
+<span class="fc" id="L401">        return processSet(&quot;$techn&quot;, value, setter);</span>
+    }
+
+    private boolean processType(String value, Consumer&lt;String&gt; setter) {
+<span class="fc" id="L405">        return process(&quot;$type&quot;, value, setter);</span>
+    }
+
+    private boolean processFrom(String value, Consumer&lt;String&gt; setter) {
+<span class="fc" id="L409">        return process(&quot;$from&quot;, value, setter);</span>
+    }
+
+    private boolean processTo(String value, Consumer&lt;String&gt; setter) {
+<span class="fc" id="L413">        return process(&quot;$to&quot;, value, setter);</span>
+    }
+
+    private boolean process(String ident, String value, Consumer&lt;String&gt; setter) {
+<span class="fc bfc" id="L417" title="All 2 branches covered.">        if (value.contains(ident)) {</span>
+<span class="fc" id="L418">            setter.accept(normalize(value.replace(ident, &quot;&quot;).replaceFirst(&quot;=&quot;, &quot;&quot;)));</span>
+<span class="fc" id="L419">            return true;</span>
+        }
+<span class="fc" id="L421">        return false;</span>
+    }
+
+    private boolean processSet(String ident, String value, Consumer&lt;Set&lt;String&gt;&gt; setter) {
+<span class="fc bfc" id="L425" title="All 2 branches covered.">        if (value.contains(ident)) {</span>
+<span class="fc" id="L426">            setter.accept(stream(value.replace(ident, &quot;&quot;).replaceFirst(&quot;=&quot;, &quot;&quot;).split(&quot;[,+]&quot;)).map(this::normalize).collect(toSet()));</span>
+<span class="fc" id="L427">            return true;</span>
+        }
+<span class="fc" id="L429">        return false;</span>
+    }
+
+    private String normalize(String text) {
+<span class="pc bpc" id="L433" title="1 of 2 branches missed.">        if (text == null) {</span>
+<span class="nc" id="L434">            return null;</span>
+        } else {
+<span class="fc" id="L436">            return text.replace(&quot;\&quot;&quot;, &quot;&quot;).trim();</span>
+        }
+    }
+
+    private String normalize(Token token) {
+<span class="pc bpc" id="L441" title="1 of 4 branches missed.">        if (token == null || token.getText() == null) {</span>
+<span class="fc" id="L442">            return null;</span>
+        } else {
+<span class="fc" id="L444">            return token.getText().replace(&quot;\&quot;&quot;, &quot;&quot;).trim();</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

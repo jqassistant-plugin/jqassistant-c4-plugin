@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractBuildingBlock.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-c4-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.c4.data</a> &gt; <span class="el_source">AbstractBuildingBlock.java</span></div><h1>AbstractBuildingBlock.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.c4.data;
+
+import lombok.Builder;
+import lombok.experimental.SuperBuilder;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+/**
+ * Representation of a C4 building block, i.e. all elements except a {@link Boundary}.
+ *
+ * @author Stephan Pirnbaum
+ */
+<span class="pc bfc" id="L19" title="All 2 branches covered.">@SuperBuilder</span>
+public abstract class AbstractBuildingBlock extends AbstractElement {
+
+    private final String description;
+    private final boolean external;
+    private final SecondaryElementType secondaryElementType;
+    @Builder.Default
+    private final Set&lt;String&gt; technologies = new HashSet&lt;&gt;();
+    private Map&lt;String, String&gt; properties;
+
+    @Override
+    public String buildStringRepresentation() {
+<span class="fc" id="L31">        return String.format(&quot;%s{%s%s%s%s%s%s}&quot;,</span>
+<span class="fc" id="L32">                buildLabelString(), buildAliasString(), buildNameString(), buildDescriptionString(), buildTechnologiesString(), buildExternalString(), buildPropertiesString());</span>
+    }
+
+    private String buildDescriptionString() {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (StringUtils.isNotEmpty(this.description)) {</span>
+<span class="fc" id="L37">            return &quot;, description: \&quot;&quot; + this.description + &quot;\&quot;&quot;;</span>
+        } else {
+<span class="fc" id="L39">            return &quot;&quot;;</span>
+        }
+    }
+
+    private String buildExternalString() {
+<span class="fc" id="L44">        return &quot;, external: &quot; + this.external;</span>
+    }
+
+    private String buildPropertiesString() {
+<span class="pc bpc" id="L48" title="1 of 4 branches missed.">        if (this.properties != null &amp;&amp; this.properties.size() &gt; 0) {</span>
+<span class="fc" id="L49">            return &quot;, &quot; + properties.entrySet()</span>
+<span class="fc" id="L50">                    .stream()</span>
+<span class="fc" id="L51">                    .map(e -&gt; e.getKey().replaceAll(&quot; &quot;, &quot;&quot;) + &quot;: \&quot;&quot; + e.getValue() + &quot;\&quot;&quot;)</span>
+<span class="fc" id="L52">                    .collect(Collectors.joining(&quot;, &quot;));</span>
+        } else {
+<span class="fc" id="L54">            return &quot;&quot;;</span>
+        }
+    }
+
+    private String buildTechnologiesString() {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (CollectionUtils.isNotEmpty(this.technologies)) {</span>
+<span class="fc" id="L60">            return &quot;, technologies: [&quot; + this.technologies.stream().map(s -&gt; &quot;\&quot;&quot; + s + &quot;\&quot;&quot;).collect(Collectors.joining(&quot;, &quot;)) + &quot;]&quot;;</span>
+
+        } else {
+<span class="fc" id="L63">            return &quot;&quot;;</span>
+        }
+    }
+
+    @Override
+    Set&lt;String&gt; getAdditionalStereotypes() {
+<span class="fc" id="L69">        Set&lt;String&gt; labels = new LinkedHashSet&lt;&gt;();</span>
+<span class="fc" id="L70">        labels.add(getPrimaryElementTypeLabel());</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (this.secondaryElementType != null) {</span>
+<span class="fc" id="L72">            this.secondaryElementType.getLabel().ifPresent(labels::add);</span>
+        }
+<span class="fc" id="L74">        return labels;</span>
+    }
+
+    abstract String getPrimaryElementTypeLabel();
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

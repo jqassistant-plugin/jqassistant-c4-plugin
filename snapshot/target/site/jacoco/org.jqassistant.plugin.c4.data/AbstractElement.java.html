@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractElement.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-c4-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.c4.data</a> &gt; <span class="el_source">AbstractElement.java</span></div><h1>AbstractElement.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.c4.data;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.experimental.SuperBuilder;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+/**
+ * Representation of any C4 element.
+ *
+ * @author Stephan Pirnbaum
+ */
+<span class="pc bfc" id="L16" title="All 2 branches covered.">@SuperBuilder</span>
+public abstract class AbstractElement {
+
+<span class="fc" id="L19">    @Getter</span>
+    private final String alias;
+<span class="nc" id="L21">    @Getter</span>
+    private final String name;
+    @Builder.Default
+    private final Set&lt;String&gt; stereotypes = new HashSet&lt;&gt;();
+<span class="fc" id="L25">    @Getter</span>
+    private AbstractElement parent;
+
+    /**
+     * Creates a String representation of the C4 element for use in Cypher queries in the format: :Label*{Property*}
+     *
+     * @return The String representation.
+     */
+    public abstract String buildStringRepresentation();
+
+    final String buildAliasString() {
+<span class="fc" id="L36">        return &quot;alias: \&quot;&quot; + this.alias + &quot;\&quot;&quot;;</span>
+    }
+
+    final String buildNameString() {
+<span class="fc" id="L40">        return &quot;, name: \&quot;&quot; + this.name + &quot;\&quot;&quot;;</span>
+    }
+
+    final String buildLabelString() {
+<span class="fc" id="L44">        Set&lt;String&gt; labels = new LinkedHashSet&lt;&gt;();</span>
+<span class="fc" id="L45">        labels.add(&quot;C4&quot;);</span>
+<span class="fc" id="L46">        labels.addAll(getAdditionalStereotypes());</span>
+<span class="fc" id="L47">        labels.addAll(this.stereotypes);</span>
+<span class="fc" id="L48">        return &quot;:&quot; + String.join(&quot;:&quot;, labels);</span>
+    }
+
+    /**
+     * Get additional stereotypes of the C4 element for use as Cypher labels.
+     *
+     * @return The additional stereotypes.
+     */
+    abstract Set&lt;String&gt; getAdditionalStereotypes();
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

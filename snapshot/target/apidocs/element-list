@@ -1,0 +1,5 @@
+org.jqassistant.plugin.c4
+org.jqassistant.plugin.c4.antlr
+org.jqassistant.plugin.c4.data
+org.jqassistant.plugin.c4.model
+org.jqassistant.plugin.c4.report

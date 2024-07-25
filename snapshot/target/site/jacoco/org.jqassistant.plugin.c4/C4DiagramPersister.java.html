@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>C4DiagramPersister.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jqassistant-c4-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jqassistant.plugin.c4</a> &gt; <span class="el_source">C4DiagramPersister.java</span></div><h1>C4DiagramPersister.java</h1><pre class="source lang-java linenums">package org.jqassistant.plugin.c4;
+
+import com.buschmais.jqassistant.core.store.api.Store;
+import com.buschmais.xo.api.Query;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.IteratorUtils;
+import org.jqassistant.plugin.c4.data.AbstractElement;
+import org.jqassistant.plugin.c4.data.Boundary;
+import org.jqassistant.plugin.c4.data.C4Diagram;
+import org.jqassistant.plugin.c4.data.Component;
+import org.jqassistant.plugin.c4.data.Container;
+import org.jqassistant.plugin.c4.data.ElementRelation;
+import org.jqassistant.plugin.c4.data.Person;
+import org.jqassistant.plugin.c4.data.System;
+import org.jqassistant.plugin.c4.model.BoundaryDescriptor;
+import org.jqassistant.plugin.c4.model.C4DiagramDescriptor;
+import org.jqassistant.plugin.c4.model.ComponentDescriptor;
+import org.jqassistant.plugin.c4.model.ContainerDescriptor;
+import org.jqassistant.plugin.c4.model.ElementDescriptor;
+import org.jqassistant.plugin.c4.model.PersonDescriptor;
+import org.jqassistant.plugin.c4.model.SystemDescriptor;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Class to persist a given {@link C4Diagram}.
+ *
+ * @author Stephan Pirnbaum
+ */
+<span class="fc" id="L33">@RequiredArgsConstructor</span>
+<span class="fc" id="L34">@Slf4j</span>
+public class C4DiagramPersister {
+
+    private static final String relQueryTemplate = &quot;MATCH (s:C4), (t:C4) WHERE id(s) = %d AND id(t) = %d MERGE (s)-[d%s]-&gt;(t) RETURN d&quot;;
+    private static final String elementQueryTemplate = &quot;CREATE (n%s) RETURN n&quot;;
+
+    private final Store store;
+
+    /**
+     * Persists the given {@link C4Diagram}.
+     *
+     * @param c4Diagram The diagram to persist.
+     * @return The created {@link C4DiagramDescriptor}.
+     */
+    public C4DiagramDescriptor persist(C4Diagram c4Diagram) {
+<span class="fc" id="L49">        C4DiagramDescriptor c4DiagramDescriptor = store.create(C4DiagramDescriptor.class);</span>
+<span class="fc" id="L50">        c4DiagramDescriptor.setName(c4Diagram.getName());</span>
+<span class="fc" id="L51">        Map&lt;String, ElementDescriptor&gt; elementAliasMap = persistElements(c4DiagramDescriptor, c4Diagram.getElements());</span>
+<span class="fc" id="L52">        persistRelations(elementAliasMap, c4Diagram.getRelations());</span>
+
+<span class="fc" id="L54">        return c4DiagramDescriptor;</span>
+    }
+
+    private Map&lt;String, ElementDescriptor&gt; persistElements(C4DiagramDescriptor c4Diagram, List&lt;AbstractElement&gt; elements) {
+<span class="fc" id="L58">        Map&lt;String, ElementDescriptor&gt; elementAliasMap = new HashMap&lt;&gt;();</span>
+        // persist elements
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        for (AbstractElement element : elements) {</span>
+<span class="fc" id="L61">            ElementDescriptor c4Element = createElement(c4Diagram, element);</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">            if (c4Element != null) {</span>
+<span class="fc" id="L63">                elementAliasMap.put(c4Element.getAlias(), c4Element);</span>
+            }
+<span class="fc" id="L65">        }</span>
+
+        // persist parent-child relation
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        for (AbstractElement element : elements) {</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">            if (element.getParent() != null) {</span>
+<span class="fc" id="L70">                ElementDescriptor parent = elementAliasMap.get(element.getParent().getAlias());</span>
+<span class="fc" id="L71">                ElementDescriptor child = elementAliasMap.get(element.getAlias());</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">                if (child instanceof ComponentDescriptor) {</span>
+<span class="fc" id="L73">                    parent.getContainedComponents().add((ComponentDescriptor) child);</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">                } else if (child instanceof ContainerDescriptor) {</span>
+<span class="nc" id="L75">                    parent.getContainedContainers().add((ContainerDescriptor) child);</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">                } else if (child instanceof SystemDescriptor) {</span>
+<span class="fc" id="L77">                    parent.getContainedSystems().add((SystemDescriptor) child);</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">                } else if (child instanceof PersonDescriptor) {</span>
+<span class="nc" id="L79">                    parent.getContainedPersons().add((PersonDescriptor) child);</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">                } else if (child instanceof BoundaryDescriptor) {</span>
+<span class="nc" id="L81">                    parent.getContainedBoundaries().add((BoundaryDescriptor) child);</span>
+                }
+            }
+<span class="fc" id="L84">        }</span>
+<span class="fc" id="L85">        return elementAliasMap;</span>
+    }
+
+    private void persistRelations(Map&lt;String, ElementDescriptor&gt; elementAliasMap, List&lt;ElementRelation&gt; relations) {
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        for (ElementRelation relation : relations) {</span>
+<span class="fc" id="L90">            ElementDescriptor from = elementAliasMap.get(relation.getFrom());</span>
+<span class="fc" id="L91">            ElementDescriptor to = elementAliasMap.get(relation.getTo());</span>
+<span class="pc bpc" id="L92" title="2 of 4 branches missed.">            if (from != null &amp;&amp; to != null) {</span>
+<span class="fc" id="L93">                String query = String.format(relQueryTemplate, (Long) from.getId(), (Long) to.getId(), relation.buildStringRepresentation(from.getAlias(), from.getId(), to.getAlias(), to.getId()));</span>
+<span class="fc" id="L94">                this.store.executeQuery(query);</span>
+            }
+<span class="fc" id="L96">        }</span>
+<span class="fc" id="L97">    }</span>
+
+    private ElementDescriptor createElement(C4DiagramDescriptor diagram, AbstractElement element) {
+<span class="fc" id="L100">        String query = String.format(elementQueryTemplate, element.buildStringRepresentation());</span>
+
+<span class="fc" id="L102">        Query.Result&lt;Query.Result.CompositeRowObject&gt; result = this.store.executeQuery(query);</span>
+<span class="fc" id="L103">        List&lt;Query.Result.CompositeRowObject&gt; resultList = IteratorUtils.toList(result.iterator());</span>
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">        if (resultList.size() == 1) {</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">            if (element instanceof Component) {</span>
+<span class="fc" id="L106">                ComponentDescriptor c = resultList.get(0).get(&quot;n&quot;, ComponentDescriptor.class);</span>
+<span class="fc" id="L107">                diagram.getComponents().add(c);</span>
+<span class="fc" id="L108">                return c;</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">            } else if (element instanceof Container) {</span>
+<span class="fc" id="L110">                ContainerDescriptor c = resultList.get(0).get(&quot;n&quot;, ContainerDescriptor.class);</span>
+<span class="fc" id="L111">                diagram.getContainers().add(c);</span>
+<span class="fc" id="L112">                return c;</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">            } else if (element instanceof System) {</span>
+<span class="fc" id="L114">                SystemDescriptor s = resultList.get(0).get(&quot;n&quot;, SystemDescriptor.class);</span>
+<span class="fc" id="L115">                diagram.getSystems().add(s);</span>
+<span class="fc" id="L116">                return s;</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">            } else if (element instanceof Person) {</span>
+<span class="fc" id="L118">                PersonDescriptor p = resultList.get(0).get(&quot;n&quot;, PersonDescriptor.class);</span>
+<span class="fc" id="L119">                diagram.getPersons().add(p);</span>
+<span class="fc" id="L120">                return p;</span>
+<span class="pc bpc" id="L121" title="1 of 2 branches missed.">            } else if (element instanceof Boundary) {</span>
+<span class="fc" id="L122">                BoundaryDescriptor b = resultList.get(0).get(&quot;n&quot;, BoundaryDescriptor.class);</span>
+<span class="fc" id="L123">                diagram.getBoundaries().add(b);</span>
+<span class="fc" id="L124">                return b;</span>
+            }
+        }
+
+<span class="nc" id="L128">        return null;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
