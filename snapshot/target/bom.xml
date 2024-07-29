@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bom serialNumber="urn:uuid:d3965413-fbd1-34a7-80ce-0b788eeab1dc" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-07-29T09:37:14Z</timestamp>
+    <timestamp>2024-07-29T09:37:05Z</timestamp>
     <lifecycles>
       <lifecycle>
         <phase>build</phase>

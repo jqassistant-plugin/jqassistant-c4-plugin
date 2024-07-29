@@ -1,7 +1,7 @@
 organization=jqassistant-plugin
 projectKey=org.jqassistant.plugin:jqassistant-c4-plugin
 serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.56114
-dashboardUrl=https://sonarcloud.io/dashboard?id=org.jqassistant.plugin%3Ajqassistant-c4-plugin
-ceTaskId=AZDpfJjNMr_ICfZClTkT
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZDpfJjNMr_ICfZClTkT
+serverVersion=8.0.0.56137
+dashboardUrl=https://sonarcloud.io/dashboard?id=org.jqassistant.plugin%3Ajqassistant-c4-plugin&branch=main&resolved=false
+ceTaskId=AZD92sOUfp1hRrg2i0eh
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZD92sOUfp1hRrg2i0eh
