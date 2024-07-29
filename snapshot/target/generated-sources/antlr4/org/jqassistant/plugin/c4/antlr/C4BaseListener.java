@@ -1,4 +1,4 @@
-// Generated from org/jqassistant/plugin/c4/antlr/C4.g4 by ANTLR 4.13.1
+// Generated from org/jqassistant/plugin/c4/antlr/C4.g4 by ANTLR 4.7.2
 package org.jqassistant.plugin.c4.antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -10,7 +10,6 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-@SuppressWarnings("CheckReturnValue")
 public class C4BaseListener implements C4Listener {
 	/**
 	 * {@inheritDoc}

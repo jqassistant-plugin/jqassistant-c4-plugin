@@ -13,16 +13,16 @@ import java.util.Set;
  *
  * @author Stephan Pirnbaum
  */
-<span class="pc bfc" id="L16" title="All 2 branches covered.">@SuperBuilder</span>
+@SuperBuilder
 public abstract class AbstractElement {
 
-<span class="fc" id="L19">    @Getter</span>
+    @Getter
     private final String alias;
-<span class="nc" id="L21">    @Getter</span>
+    @Getter
     private final String name;
     @Builder.Default
     private final Set&lt;String&gt; stereotypes = new HashSet&lt;&gt;();
-<span class="fc" id="L25">    @Getter</span>
+    @Getter
     private AbstractElement parent;
 
     /**
@@ -56,4 +56,4 @@ public abstract class AbstractElement {
     abstract Set&lt;String&gt; getAdditionalStereotypes();
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
