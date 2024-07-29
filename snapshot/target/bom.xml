@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bom serialNumber="urn:uuid:d3965413-fbd1-34a7-80ce-0b788eeab1dc" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
   <metadata>
-    <timestamp>2024-07-29T09:37:00Z</timestamp>
+    <timestamp>2024-07-29T09:37:14Z</timestamp>
     <lifecycles>
       <lifecycle>
         <phase>build</phase>
@@ -212,37 +212,38 @@
       <purl>pkg:maven/org.junit.jupiter/junit-jupiter-params@5.9.1?type=jar</purl>
       <externalReferences><reference type="website"><url>https://junit.org/junit5/</url></reference><reference type="vcs"><url>https://github.com/junit-team/junit5</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar">
+    <component type="library" bom-ref="pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar">
       <publisher>ANTLR</publisher>
       <group>org.antlr</group>
       <name>antlr4-runtime</name>
-      <version>4.7.2</version>
+      <version>4.13.1</version>
       <description>The ANTLR 4 Runtime</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">2592a7a5d7320ad5f6677bf41f77a101</hash>
-        <hash alg="SHA-1">e27d8ab4f984f9d186f54da984a6ab1cccac755e</hash>
-        <hash alg="SHA-256">4c518b87d4bdff8b44cd8cbc1af816e944b62a3fe5b80b781501cf1f4759bbc4</hash>
-        <hash alg="SHA-512">f057286fa0f7e3d0cca414a348893577288882b887c0278dd0c012447d3c48ac150b30e023f886f038c6b0a144329ff927a3869af5534d23b279cf88f302e0bb</hash>
-        <hash alg="SHA-384">686163726872d1fc86971a4177588854d87360e8f01c1ef1e03e348c49caf8e61e89ddc930e66e39e6891da9deb41fda</hash>
-        <hash alg="SHA3-384">86fb03173771be6b414a8a2f258d12ea19651283bcd5ea9992344c00bf04fae26d906f78439a7309ccfe997309154558</hash>
-        <hash alg="SHA3-256">86b63b50679424291cec0c67bc428c63b2f35cfd660f61d30453f1712542bce9</hash>
-        <hash alg="SHA3-512">951ad540da646a19c412d87d6f19b9189445d3b4d5caa87d689e9576db78249beca7228ab066005b46ad89041e37ceeda0ca9398596fb7df076b858d4431c15e</hash>
+        <hash alg="MD5">dd465ddb2a8dbf69eb6c94e69a0d5f0f</hash>
+        <hash alg="SHA-1">17125bae1d965624e265ef49552f6465a2bfa307</hash>
+        <hash alg="SHA-256">54665d2838cc66458343468efc539e454fc95b46a8a04b13c6ac43fc9be63505</hash>
+        <hash alg="SHA-512">63eb51bfcee49c52848d8b7c3c46d8b4d367d85fb3c3db7175eaacba94e4d0c227b78e5955a0e86e575e1c6206fc2a43e5fa96fb04ad7c16e24ec94015cfc18b</hash>
+        <hash alg="SHA-384">9e5e022d1eff5870f53e0e17d09d737eebb5b859c3403e78308af4616a86cde0830842b81a389ac4a0df871fb1032124</hash>
+        <hash alg="SHA3-384">20f3a927369f6bfd94bd8b244e0e9330d4438736414c403b712098f6aad9a1140bc17333cacf194f1b9e99c0f62ffdfa</hash>
+        <hash alg="SHA3-256">5696b3e757e6135c1aa56452b86ff0456425d13b97b33ace3f4d3dc6c752c4b6</hash>
+        <hash alg="SHA3-512">33251a06eaeaa56f274548e47b405cce279a9e54e34d65bc382d2482887bd470e5080da4f75c221658c3e70aea79e748bd0a3f47e49e37805174e23f71747b92</hash>
       </hashes>
       <licenses>
         <license>
-          <id>BSD-4-Clause</id>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
         </license>
       </licenses>
-      <purl>pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar</purl>
-      <externalReferences><reference type="website"><url>http://www.antlr.org/antlr4-runtime</url></reference><reference type="distribution-intake"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/antlr/antlr4/issues</url></reference><reference type="mailing-list"><url>https://groups.google.com/forum/?fromgroups#!forum/antlr-discussion</url></reference><reference type="vcs"><url>https://github.com/antlr/antlr4/tree/master/antlr4-runtime</url></reference></externalReferences>
+      <purl>pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://www.antlr.org/antlr4-runtime/</url></reference><reference type="distribution-intake"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/antlr/antlr4/issues</url></reference><reference type="mailing-list"><url>https://groups.google.com/forum/?fromgroups#!forum/antlr-discussion</url></reference><reference type="vcs"><url>https://github.com/antlr/antlr4/tree/master/antlr4-runtime</url></reference></externalReferences>
     </component>
   </components>
   <dependencies>
     <dependency ref="pkg:maven/org.jqassistant.plugin/jqassistant-c4-plugin@2.2.0-SNAPSHOT?type=jar">
       <dependency ref="pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.9.1?type=jar"/>
       <dependency ref="pkg:maven/org.junit.jupiter/junit-jupiter-params@5.9.1?type=jar"/>
-      <dependency ref="pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar"/>
+      <dependency ref="pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.9.1?type=jar">
       <dependency ref="pkg:maven/org.junit.platform/junit-platform-engine@1.9.1?type=jar"/>
@@ -268,6 +269,6 @@
       <dependency ref="pkg:maven/org.junit.jupiter/junit-jupiter-api@5.9.1?type=jar"/>
       <dependency ref="pkg:maven/org.apiguardian/apiguardian-api@1.1.2?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar"/>
+    <dependency ref="pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar"/>
   </dependencies>
 </bom>
