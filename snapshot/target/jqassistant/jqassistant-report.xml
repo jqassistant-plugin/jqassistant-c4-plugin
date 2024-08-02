@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jqassistant-report xmlns="http://schema.jqassistant.org/report/v2.3">
-  <group id="jqassistant-plugin:Default" date="2024-07-29T09:37:39">
-    <group id="jqassistant-plugin-maven:Default" date="2024-07-29T09:37:39">
+  <group id="jqassistant-plugin:Default" date="2024-08-02T01:05:23">
+    <group id="jqassistant-plugin-maven:Default" date="2024-08-02T01:05:23">
       <constraint id="jqassistant-plugin-maven:GroupId">
         <description>The groupId for jQAssistant plugin Maven projects must follow the pattern 'org.jqassistant.plugin.&lt;project&gt;'.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>92</duration>
+        <duration>61</duration>
       </constraint>
       <concept id="jqassistant-plugin-maven:ParentProject">
         <description>Labels all Maven projects which declare "org.jqassistant.plugin:parent" as parent module with "Parent".</description>
@@ -26,13 +26,13 @@
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>127</duration>
+        <duration>86</duration>
       </concept>
       <constraint id="jqassistant-plugin-maven:MavenModulesMustUseParentGroupId">
         <description>All Maven projects must define the same groupId as the parent of the plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>80</duration>
+        <duration>46</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -41,7 +41,7 @@
         <description>At least one developer must be specified in the "developers" section of the parent pom.xml of a plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>73</duration>
+        <duration>60</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -50,7 +50,7 @@
         <description>A SCM section having both connection and developerConnection set to "scm:git:https://github.com/jqassistant-plugin/_repository-name_" must be specified in the parent pom.xml of a plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>89</duration>
+        <duration>73</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -59,20 +59,20 @@
         <description>The project URL must be defined in the parent pom.xml of a plugin project.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>189</duration>
+        <duration>138</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>871</duration>
+      <duration>635</duration>
     </group>
-    <group id="jqassistant-plugin-test:Default" date="2024-07-29T09:37:40">
+    <group id="jqassistant-plugin-test:Default" date="2024-08-02T01:05:24">
       <concept id="junit5:ParameterizedTestMethod">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.ParameterizedTest") and
 labels them with "Test", "Parameterized", and "Junit5".</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>61</duration>
+        <duration>38</duration>
       </concept>
       <concept id="junit5:TestMethod">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.Test") and
@@ -95,21 +95,21 @@ labels them with "Test" and "Junit5".</description>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>65</duration>
+        <duration>57</duration>
       </concept>
       <concept id="junit5:TestTemplateMethod">
         <description>Labels all methods annotated by "@org.junit.jupiter.api.TestTemplate"
 with "Junit5", "Test" and "Template".</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>70</duration>
+        <duration>54</duration>
       </concept>
       <concept id="junit5:RepeatedTestMethod">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.RepeatedTest") and
 labels them with "Test", "Repeated", and "Junit5".</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>46</duration>
+        <duration>36</duration>
       </concept>
       <concept id="junit5:TestClass">
         <description>Labels all classes containing test methods with "Test" and "Junit5".</description>
@@ -135,7 +135,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>64</duration>
+        <duration>61</duration>
         <required-concept id="junit5:ParameterizedTestMethod">
           <status>success</status>
         </required-concept>
@@ -153,7 +153,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>Adds a label "IntegrationTest" to all non-abstract classes deriving from AbstractPluginIT or AbstractJavaPluginIT.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>110</duration>
+        <duration>149</duration>
         <required-concept id="junit5:TestClass">
           <status>success</status>
         </required-concept>
@@ -162,19 +162,19 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>All integration test classes must have the name suffix "IT" for being executed using the Maven Failsafe Plugin.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>29</duration>
+        <duration>22</duration>
         <required-concept id="jqassistant-plugin-test:IT">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>512</duration>
+      <duration>468</duration>
     </group>
-    <group id="jqassistant-plugin-plugin:Default" date="2024-07-29T09:37:40">
+    <group id="jqassistant-plugin-plugin:Default" date="2024-08-02T01:05:24">
       <concept id="neo4j:Procedure">
         <description>Labels all types annotated with "@org.neo4j.procedure.Procedure" with `Neo4j` and `Procedure`.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>50</duration>
+        <duration>36</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginDescriptor">
         <description>Labels jQAssistant plugin descriptor files with `jQAssistant` and `PluginDescriptor`.</description>
@@ -202,14 +202,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>53</duration>
+        <duration>39</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginRegistersProcedure">
         <description>Creates a `REGISTERS` relation between all procedure class elements of the jQAssistant plugin
             descriptor to the matching Java type.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>176</duration>
+        <duration>129</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
@@ -218,7 +218,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>Types declaring Neo4j procedures must be registered.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>48</duration>
+        <duration>35</duration>
         <required-concept id="neo4j:Procedure">
           <status>success</status>
         </required-concept>
@@ -231,14 +231,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
             `UserFunction`.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>61</duration>
+        <duration>36</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginRegistersUserFunction">
         <description>Creates a `REGISTERS` relation between all function class elements of the jQAssistant plugin
             descriptor to the matching Java type.</description>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>150</duration>
+        <duration>110</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
@@ -247,7 +247,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>Types declaring Neo4j user functions must be registered.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>44</duration>
+        <duration>36</duration>
         <required-concept id="neo4j:UserFunction">
           <status>success</status>
         </required-concept>
@@ -281,14 +281,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>warning</status>
         <severity level="3">minor</severity>
-        <duration>165</duration>
+        <duration>133</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>799</duration>
+      <duration>603</duration>
     </group>
-    <group id="jqassistant-plugin-package:Default" date="2024-07-29T09:37:41">
+    <group id="jqassistant-plugin-package:Default" date="2024-08-02T01:05:25">
       <concept id="java:GeneratedLombokType">
         <description>Labels types generated by Lombok as 'Generated' (requires 'lombok.addLombokGeneratedAnnotation=true' in 'lombok.config').</description>
         <result>
@@ -305,7 +305,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </result>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>67</duration>
+        <duration>53</duration>
       </concept>
       <concept id="java:GeneratedType">
         <description>Reports the count of types labeled with `Generated`, grouped by containing artifact.</description>
@@ -320,13 +320,13 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         <description>All package names used in a Maven project must start with the groupId.</description>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>116</duration>
+        <duration>61</duration>
         <required-concept id="java:GeneratedType">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>199</duration>
+      <duration>130</duration>
     </group>
-    <duration>199</duration>
+    <duration>130</duration>
   </group>
 </jqassistant-report>
