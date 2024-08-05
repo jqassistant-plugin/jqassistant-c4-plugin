@@ -17,21 +17,21 @@ jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Lexer,16,737,0,8,8,27,8,
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser,476,2730,28,98,132,610,31,74,5,24
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.ElementContext,55,21,2,2,11,6,13,3,11,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.BoundaryContext,22,33,2,2,5,8,7,5,5,5
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.SystemParamListContext,30,21,2,2,7,6,9,3,7,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.GenericBoundaryParamListContext,30,21,2,2,7,6,9,3,7,3
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.SystemParamListContext,30,21,2,2,7,6,9,3,7,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.ContainerContext,32,27,2,2,7,7,9,4,7,4
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.C4ElementContext,32,21,2,2,6,6,8,3,6,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.IgnoreContext,7,21,2,2,2,6,4,3,2,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.BoundaryParamListContext,30,21,2,2,7,6,9,3,7,3
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.BiRelContext,7,27,2,2,2,7,4,4,2,4
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.ComponentContext,32,27,2,2,7,7,9,4,7,4
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.antlr,C4Parser.BiRelContext,7,27,2,2,2,7,4,4,2,4
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement,2,33,0,0,1,6,1,1,1,1
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,SecondaryElementType,0,26,0,0,0,4,0,1,0,1
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement,2,54,0,0,1,6,1,1,1,1
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,SecondaryElementType,0,39,0,0,0,4,0,1,0,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Person,0,2,0,0,0,1,0,1,0,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractElement,0,31,0,0,0,7,0,3,0,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,System,0,2,0,0,0,1,0,1,0,1

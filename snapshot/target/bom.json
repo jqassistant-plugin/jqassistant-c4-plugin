@@ -4,7 +4,7 @@
   "serialNumber" : "urn:uuid:d3965413-fbd1-34a7-80ce-0b788eeab1dc",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2024-08-02T01:04:51Z",
+    "timestamp" : "2024-08-05T00:21:00Z",
     "lifecycles" : [
       {
         "phase" : "build"
@@ -97,41 +97,41 @@
     {
       "group" : "org.junit.jupiter",
       "name" : "junit-jupiter-engine",
-      "version" : "5.10.3",
+      "version" : "5.9.1",
       "description" : "Module \"junit-jupiter-engine\" of JUnit 5.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "c87ca6659d594120a6030a2760bcdf14"
+          "content" : "72817d3efd98d986d847c2ed76eef329"
         },
         {
           "alg" : "SHA-1",
-          "content" : "48c14e866bb1a87ca35d24ff068463bb202ada24"
+          "content" : "1bf771097bde296c3ab174861954e8aafaaf2e94"
         },
         {
           "alg" : "SHA-256",
-          "content" : "bbd3ce8dc11e9925071ef9691d68af1ab6e712faa6851f7c5275bc8aafc88673"
+          "content" : "8bbc506b4f603ede1f6bafd8eee69a9cc43de0c26a0ee8d40d583d3feeedc2e9"
         },
         {
           "alg" : "SHA-512",
-          "content" : "6027c52e10dc84e5ab3fb56f1e4a2597d4f1356c1ddce2cff186e92b31a7c3180bc8bcfec8df5dc603c279cee6f71c62cc1bf952efd21f73d9423a39b839fe39"
+          "content" : "c1b67264ecb7d806a954b80d9836e52c9fd9382eea5f0f564be83b75fee01ad030060dd1508e52efd533b799fe8eea3504166ecffe9d8c8c2aa6d14404c9264d"
         },
         {
           "alg" : "SHA-384",
-          "content" : "9632a2745edea1fe1397163dc6d1d02458f1ca9a710c22d76d7f351608ff1267a9a11d5f26eda6348bc54e679ac0dba1"
+          "content" : "a7962c23752a83bf58c7bf6105c1fccecc72e98279f87647f82c54d4287559390a2f0e68822ce2fd7bff33a7df346c67"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "30b3ed9b07192b0cbfb06a63c5e643a147c0415288ae62183d12a117b791c11ce181f46c02d1683027bb1e0aee4b3d6a"
+          "content" : "d52a710b05115812b624d4a4c5c56634bc9e369ea681492696e169575d4e4f09bfe7cdf699346e40a2727bbf32dcd8d6"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "df4d577bdc84d72532b80cba3930deaf335f89e1715620e2b83ccd5383ccbecd"
+          "content" : "3fb42d1a3d4e81843135bca88fe4d2da5f1ad57350c8b8380aeed181c562a6f0"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "fc7c13a769957617c5f23e0ac966478887de99bdb89791a1dace6ef3a54ba6970c7b81b319d55023492c5dad0f3b344911577e3883f39da21710d4ea8f8ba959"
+          "content" : "b45f9e4fa695eb98ed457668a4f6a37f532173948b5472f363914adf1d45a4ea5e9f9d8fb800c84506c66ff006572b392a576efb6b58878f426a9bb965982ff5"
         }
       ],
       "licenses" : [
@@ -141,7 +141,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.10.3?type=jar",
+      "purl" : "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.9.1?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -153,46 +153,46 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.10.3?type=jar"
+      "bom-ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.9.1?type=jar"
     },
     {
       "group" : "org.junit.platform",
       "name" : "junit-platform-engine",
-      "version" : "1.10.3",
+      "version" : "1.9.1",
       "description" : "Module \"junit-platform-engine\" of JUnit 5.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "8fe56ec6a59c1e208e8ba0def9e47bf3"
+          "content" : "e5be12dda4695a67bd5768fc396bbe25"
         },
         {
           "alg" : "SHA-1",
-          "content" : "365a320c3cfd47f3346625e541e424e35dc75c42"
+          "content" : "83591e5089d6cea5f324aa3ecca9b19d5a275803"
         },
         {
           "alg" : "SHA-256",
-          "content" : "df7c32bf75cf47c4c8ddd1942091027947a7d765d30b731fe00830115fafa133"
+          "content" : "f59c3a67087f2b9bbb17a9c06dd416697989b2c53b38843874ebbbbcb0afc23f"
         },
         {
           "alg" : "SHA-512",
-          "content" : "be12765090d248f6e9b4657b4a57c842c98e92f6f81b1ec9271307a7bd39467cd1acefbf40bed2d5d63ebd0bef7748f9635c959fcc5395c5c9322418fc0f6e96"
+          "content" : "94bd8ab00658b25335d0eb8134de587438a3cb5171fcad648f15d4f1d5a03e87b09187b97acfd7f6a18bc55237b5a3183a1eeca3b605c94cccb0c763aa93d739"
         },
         {
           "alg" : "SHA-384",
-          "content" : "ba596ddbd2f6b85b456b38a33b1683880e7608da5614a94011b25565915822974325d0fc2f51eb9216a8706b5c37e958"
+          "content" : "b56f50d18587ca719db02be06b3993e7ceac6cd3ebeab015a94702f1f46f6d119cdbeffbf0f4b4dd9bc026afc1ec9753"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "eddfe417686f2e43b34a121954a88e4afa733e1af74940e456c7240f686ef2093a31f42795d10bf9f1f2a47b14cb5726"
+          "content" : "71737df6eeecb61c398ad19c6a321fba6ec1016d2636fc7d04c706ef7a93dd1961074dbf5ac149fcdd542a9f1e1445f2"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "5583101f417b044e88e5debc31385cf6337dc534c0362b0b3395d6dda7698b50"
+          "content" : "355f0aa536d49564cd295e700a6aa892c197794f310b7e06c0ddeb24ef4b82d2"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "af51d1ea92dc5dcb751f1b83f1e49b068f3775354a22c86febc3156b545ff4568c7e2bcff5a707550be9b0672799f73d0fcfb760180bd81251f367b9986c2474"
+          "content" : "fd67706e46ee16dfe950aae20dc97127af19164c73f40938c18253a1ed553db30af03aab782d3e5c1e8ce88a7c5084507ed21c305eb53e931de9f5ebe3ad8f3e"
         }
       ],
       "licenses" : [
@@ -202,7 +202,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.junit.platform/junit-platform-engine@1.10.3?type=jar",
+      "purl" : "pkg:maven/org.junit.platform/junit-platform-engine@1.9.1?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -214,46 +214,46 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.junit.platform/junit-platform-engine@1.10.3?type=jar"
+      "bom-ref" : "pkg:maven/org.junit.platform/junit-platform-engine@1.9.1?type=jar"
     },
     {
       "group" : "org.opentest4j",
       "name" : "opentest4j",
-      "version" : "1.3.0",
+      "version" : "1.2.0",
       "description" : "Open Test Alliance for the JVM",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "03c404f727531f3fd3b4c73997899327"
+          "content" : "45c9a837c21f68e8c93e85b121e2fb90"
         },
         {
           "alg" : "SHA-1",
-          "content" : "152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e"
+          "content" : "28c11eb91f9b6d8e200631d46e20a7f407f2a046"
         },
         {
           "alg" : "SHA-256",
-          "content" : "48e2df636cab6563ced64dcdff8abb2355627cb236ef0bf37598682ddf742f1b"
+          "content" : "58812de60898d976fb81ef3b62da05c6604c18fd4a249f5044282479fc286af2"
         },
         {
           "alg" : "SHA-512",
-          "content" : "78fc698a7871bb50305e3657893c10500595f043348d875f57bc39ca4a6a51eda3967b7c8c8a7ec3e8f85f2171bca4aa98823e912e416e87e81c6ba5b70a37c3"
+          "content" : "17f77797a260eb2bd1666a90e25efc79a5413afa9df1c1cb6c4cd1949d61c38b241e3bb20956396b5f54d144720303d72a2ac00bc5bf245a260a3c3099e01c74"
         },
         {
           "alg" : "SHA-384",
-          "content" : "10398b6998c9202a0731e2e19ae1c3f9d8a83582c2663fe7bdda15794ee6fa816727dbd8f7c7164bd5395ee1cfe7c97e"
+          "content" : "ef25f5dd948c9ab7256e896da994871c1645b22a8d2d83f1e9ff7c6562b62acb70fcf0bb976a9580fb955a8e8b9c43dd"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "3abe706fd78509c25a402c7bbf6f9ddf71ffb5b35054864ba0fdf7902207115f888a0ba728fd71d2e87a9360d2498121"
+          "content" : "c8ae5d803f34d54150681490afaa595a607e31c15c82765fb24eb7035f3310a4db71832d4ea1840d5281c4fb15e25a91"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "d961907a1bfa1dcda329dca494ffbc251b31fabcaca5ab7095661a8ce3c1d654"
+          "content" : "874b139216e546b33623c53452aea25f36d6c5ec64446aa27be1e60c6838e5c3"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "0ad661617bcac51bcd26f7ad4611c69b1fd9811b50dbf734e041a3243ab1f845e7796620e8a7c40c4a2df3946864598b1251396c7d9bd813203d82710788cce0"
+          "content" : "58368f990cb11d2965129b32986edd007f909b1187f8fe6842306aa5179fa74d7593bca2042776f6deb68921069719ee4f2bc54e609f87b974a885d7aa7fc05f"
         }
       ],
       "licenses" : [
@@ -263,7 +263,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.opentest4j/opentest4j@1.3.0?type=jar",
+      "purl" : "pkg:maven/org.opentest4j/opentest4j@1.2.0?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -275,46 +275,46 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.opentest4j/opentest4j@1.3.0?type=jar"
+      "bom-ref" : "pkg:maven/org.opentest4j/opentest4j@1.2.0?type=jar"
     },
     {
       "group" : "org.junit.platform",
       "name" : "junit-platform-commons",
-      "version" : "1.10.3",
+      "version" : "1.9.1",
       "description" : "Module \"junit-platform-commons\" of JUnit 5.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "83ff374dd428b03f1cf70d0143259f01"
+          "content" : "5d39e33ed6c2275c75f3ad4d204a9f1f"
         },
         {
           "alg" : "SHA-1",
-          "content" : "a353d42a2f13343a7cb80c5228ae66ff64495481"
+          "content" : "3145f821b5cd10abcdc5f925baa5fffa6f1b628f"
         },
         {
           "alg" : "SHA-256",
-          "content" : "9787f04d49db59397cdd7555d421a5bd2d1445666997d327b94f85e38bed57f1"
+          "content" : "a8e82d510bbbce5fe1777b2ecf7bc68401e9ae8327009e029b2db5798403d25e"
         },
         {
           "alg" : "SHA-512",
-          "content" : "6d9e6642a5c08bdce3f1ee7691dad5d6ebc480530fcaf3c13678806996ce14b442cf7b6a0bcc76068dbda0e31376f871b91d81fcb201f3ad0c6a953c69303dc5"
+          "content" : "750576c1887d1e3595e538ade132f58e510ce225e41cb12a8d3e264b8fd2c37bbc3d089d5ee0aa918d97797fc606ac5b337b6c99c631718a3c5f16ebcd2e8715"
         },
         {
           "alg" : "SHA-384",
-          "content" : "4973595cdef09e6efdab65e1d22e97a5d0cf769f2bfa83da91ff5cfa08e61973cfa2a1a1b00d9ce4d498dcbe00ecfa67"
+          "content" : "407ccefa66c444476839f6534a4ded641b8a30c94f019c7677403176a3849ee010d4c1427007faa36f73758423790d12"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "8c3159e3444ec6fbcf2760a207d1405d7ca33629bb8621a6ef6e9a4c73dd51e82145ae8588e34ad1b781d3fd9a800c80"
+          "content" : "65461e8d181cf71618bad97a779d74f207a679b2f6c5e0223586a86cbfde181d285fb5395c805b68c203f7ebcf02c349"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "b0cafec771b817d5d2e372921d4c2a9f9e5249b7fdaebb06744bb232eb4164d0"
+          "content" : "c358f062ad19c63282ce577d46ca6b71b2f4d7c76846d5a1bcc0ec3e6f4507fc"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "faa376fe38566c65a27bebe835f5f72f3ae7917580b770cc494d4b4622bd0ec03632f7ee4ec3599ba5c660f75ed44435c87d3cf217354212cdba79220399fe4d"
+          "content" : "aa0b26d73d761994161a1da6e07369c453d23da5c6d6bc795cae6b3fd0d8a4d285766e65b966fafd39a56ae3ff85912938f5027be8ab7cf3316cc97e4ab15302"
         }
       ],
       "licenses" : [
@@ -324,7 +324,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.junit.platform/junit-platform-commons@1.10.3?type=jar",
+      "purl" : "pkg:maven/org.junit.platform/junit-platform-commons@1.9.1?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -336,46 +336,46 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.junit.platform/junit-platform-commons@1.10.3?type=jar"
+      "bom-ref" : "pkg:maven/org.junit.platform/junit-platform-commons@1.9.1?type=jar"
     },
     {
       "group" : "org.junit.jupiter",
       "name" : "junit-jupiter-api",
-      "version" : "5.10.3",
+      "version" : "5.9.1",
       "description" : "Module \"junit-jupiter-api\" of JUnit 5.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "9c5af4543b8784a55eab254418cc367b"
+          "content" : "93dac73a55b522940bf3d5d032a8043a"
         },
         {
           "alg" : "SHA-1",
-          "content" : "a22aa91d1d6c69b2020a9aeb6d095ea81132bfa5"
+          "content" : "7bb53fbc0173e9f6a9d21d58297af94b1f2f9ce1"
         },
         {
           "alg" : "SHA-256",
-          "content" : "6efe6e01ca1ff79b7bf4c6f1eed0b29292e166c27eaf7b00ac981a14d4de61aa"
+          "content" : "5d2fe4d719dffb25a95d77e9c7a34893cbbb1b4cc6c86f2726af7e0fb7035b2f"
         },
         {
           "alg" : "SHA-512",
-          "content" : "bad54b92ec8c82f7a358c4f535d90900a5925ce51d912709ceb9f0a541b6756ac821d6c25b9e25cead49e9c2030a165ee250e27c55e103fae1c11e12da9ad047"
+          "content" : "9785c7bb2c3e65de7d3647e7760438a18a10515dd3fae46076b0fa7b29b00d1466ca91572b6c806d41f60dd74698d0cd4fbb223dc85d7a6c4ad7faf140b1a5a9"
         },
         {
           "alg" : "SHA-384",
-          "content" : "6e57ad8526286ae4032fa39b2391b34fcb100302d45437b982ca6f8caf21f0c5f36773b119a51ae0867248f29e26c8de"
+          "content" : "43d63f4cbcb8833e3570eff76712123b981465d3b1f0aad78ae06b99de64e557b36a88b34cdef23d972a9eb1f81fdddb"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "1c6ff0e4d31b90aac2bbcc31e709dbe902caaf2016fda8ab0a6b30fcf055476891a68adb5b3ff30d95a1cab2bbb5aa86"
+          "content" : "38abea431b51f4c0d006fd55bd77df61bbc1ad8c49e7f230fb4cb8704a2253065c2c5eaa069b8267829c0503b42104b5"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "c3c922847334dd64ba918eaa44703ba4dee5d864d8bc9c064462634a5a30bded"
+          "content" : "37a4fd74bd935243b94a1411664c8cd9b4701a5e47a7cf20baeae226f7a24c3e"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "0d3c039b1b8a3772584c044d0869e3f88b878ce5bc921bf545ae565d4e07d0f2d923148884905dbbaff0a51099b5b3b47e19a8d9960bc1067b2c3116ff3bb1c0"
+          "content" : "4c2f801fc42ebddfd45bf26b6c62326f36a5f0fbe71793436f662703b17eed34c3f2502b059c2682099cea4154b49486c5030cb9f2a0cf166dc30800bbb423e2"
         }
       ],
       "licenses" : [
@@ -385,7 +385,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.10.3?type=jar",
+      "purl" : "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.9.1?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -397,7 +397,7 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.10.3?type=jar"
+      "bom-ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.9.1?type=jar"
     },
     {
       "group" : "org.apiguardian",
@@ -463,41 +463,41 @@
     {
       "group" : "org.junit.jupiter",
       "name" : "junit-jupiter-params",
-      "version" : "5.10.3",
+      "version" : "5.9.1",
       "description" : "Module \"junit-jupiter-params\" of JUnit 5.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "8c0d875131fa73e688df785a3b2f338d"
+          "content" : "8f9ff451bb9e8e44e1e71c3f8708e85e"
         },
         {
           "alg" : "SHA-1",
-          "content" : "4852f4e4af9074d9214213b199751f99efeab8b9"
+          "content" : "ffcd1013edaeee112be11fcddeb38882d79238de"
         },
         {
           "alg" : "SHA-256",
-          "content" : "7c3ed8cefb12496b76c53c3da986ea8f0bf3f426781869475551ae3a506c1ad8"
+          "content" : "30157f26d857ba4f84c0d84d156f55f056e80dc09b4281affa8b1ed4d3205c08"
         },
         {
           "alg" : "SHA-512",
-          "content" : "c31f0694a2402cf09d24462bc97ad495d7af59ec67caac5877de0f0f443746a90e0efd10fcaa493b8851fc56d73c29bd11fd4688f118d55500c54ca461211445"
+          "content" : "bb03e241e3cf78ebebd27cf89d19904535122b7ac75a8cac3b04af6aa98106f7f0dac7d7c0c753a35bfdacbcc8e75d6509ab71491e6c00f40e1220190cd3c76d"
         },
         {
           "alg" : "SHA-384",
-          "content" : "644ea07ea7d472c1fc2392a47673ca146433dcdc4b6047f0437279746fd3f53873483f893d6f8da7a275cb5ab757cec1"
+          "content" : "87e992a5bc9e1179874a3434c158a5e39a17337e19eb833c33056e0f18e9687c08b854e6e8df1cf9735ffbbb4fb0da6c"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "028315b3bf20df0ba0c0f0fef90775856f3c2fbe808718bc0a37db3b8eee8e3a615bff96eb9b67fcc8864e6c4d1d9bc6"
+          "content" : "3804eb518a827108d5d1a80629bfac0b8654df86342cf6713d5367bea5947c064e9ef00ac2b9dfaa80e78a8497a4fe4f"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "a4242600d12e3f79fb56e55fb24c1ee315ad50434e82535d1fdb12a9bdfb2c92"
+          "content" : "ff557170709a336f84d74dda6ab60b6e1f70a84515db64f93b9acb0f2436d3d8"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "0f8ed75ad0f0b86601d90d199d16c54a94c3bd3e6abd4b4a43e0ecc892eb0474ad524bae1d045d3e2782b145180e9ce3059f584e3fd197b655e3e20479fcf4d0"
+          "content" : "1f77a58754ff32231ca829453098c1eea3186f7295bb29126524199e4d42e3ca44074b0d2db45db495be1f7d8f99c0ed758cb35f423447e7bd2fe5f67db55247"
         }
       ],
       "licenses" : [
@@ -507,7 +507,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.10.3?type=jar",
+      "purl" : "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.9.1?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -519,62 +519,61 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.10.3?type=jar"
+      "bom-ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.9.1?type=jar"
     },
     {
       "publisher" : "ANTLR",
       "group" : "org.antlr",
       "name" : "antlr4-runtime",
-      "version" : "4.13.1",
+      "version" : "4.7.2",
       "description" : "The ANTLR 4 Runtime",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "dd465ddb2a8dbf69eb6c94e69a0d5f0f"
+          "content" : "2592a7a5d7320ad5f6677bf41f77a101"
         },
         {
           "alg" : "SHA-1",
-          "content" : "17125bae1d965624e265ef49552f6465a2bfa307"
+          "content" : "e27d8ab4f984f9d186f54da984a6ab1cccac755e"
         },
         {
           "alg" : "SHA-256",
-          "content" : "54665d2838cc66458343468efc539e454fc95b46a8a04b13c6ac43fc9be63505"
+          "content" : "4c518b87d4bdff8b44cd8cbc1af816e944b62a3fe5b80b781501cf1f4759bbc4"
         },
         {
           "alg" : "SHA-512",
-          "content" : "63eb51bfcee49c52848d8b7c3c46d8b4d367d85fb3c3db7175eaacba94e4d0c227b78e5955a0e86e575e1c6206fc2a43e5fa96fb04ad7c16e24ec94015cfc18b"
+          "content" : "f057286fa0f7e3d0cca414a348893577288882b887c0278dd0c012447d3c48ac150b30e023f886f038c6b0a144329ff927a3869af5534d23b279cf88f302e0bb"
         },
         {
           "alg" : "SHA-384",
-          "content" : "9e5e022d1eff5870f53e0e17d09d737eebb5b859c3403e78308af4616a86cde0830842b81a389ac4a0df871fb1032124"
+          "content" : "686163726872d1fc86971a4177588854d87360e8f01c1ef1e03e348c49caf8e61e89ddc930e66e39e6891da9deb41fda"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "20f3a927369f6bfd94bd8b244e0e9330d4438736414c403b712098f6aad9a1140bc17333cacf194f1b9e99c0f62ffdfa"
+          "content" : "86fb03173771be6b414a8a2f258d12ea19651283bcd5ea9992344c00bf04fae26d906f78439a7309ccfe997309154558"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "5696b3e757e6135c1aa56452b86ff0456425d13b97b33ace3f4d3dc6c752c4b6"
+          "content" : "86b63b50679424291cec0c67bc428c63b2f35cfd660f61d30453f1712542bce9"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "33251a06eaeaa56f274548e47b405cce279a9e54e34d65bc382d2482887bd470e5080da4f75c221658c3e70aea79e748bd0a3f47e49e37805174e23f71747b92"
+          "content" : "951ad540da646a19c412d87d6f19b9189445d3b4d5caa87d689e9576db78249beca7228ab066005b46ad89041e37ceeda0ca9398596fb7df076b858d4431c15e"
         }
       ],
       "licenses" : [
         {
           "license" : {
-            "id" : "BSD-3-Clause",
-            "url" : "https://opensource.org/licenses/BSD-3-Clause"
+            "id" : "BSD-4-Clause"
           }
         }
       ],
-      "purl" : "pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar",
+      "purl" : "pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
-          "url" : "https://www.antlr.org/antlr4-runtime/"
+          "url" : "http://www.antlr.org/antlr4-runtime"
         },
         {
           "type" : "distribution-intake",
@@ -594,40 +593,40 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar"
+      "bom-ref" : "pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar"
     }
   ],
   "dependencies" : [
     {
       "ref" : "pkg:maven/org.jqassistant.plugin/jqassistant-c4-plugin@2.2.0-SNAPSHOT?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.10.3?type=jar",
-        "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.10.3?type=jar",
-        "pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar"
+        "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.9.1?type=jar",
+        "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.9.1?type=jar",
+        "pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.10.3?type=jar",
+      "ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-engine@5.9.1?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.junit.platform/junit-platform-engine@1.10.3?type=jar",
-        "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.10.3?type=jar",
+        "pkg:maven/org.junit.platform/junit-platform-engine@1.9.1?type=jar",
+        "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.9.1?type=jar",
         "pkg:maven/org.apiguardian/apiguardian-api@1.1.2?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/org.junit.platform/junit-platform-engine@1.10.3?type=jar",
+      "ref" : "pkg:maven/org.junit.platform/junit-platform-engine@1.9.1?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.opentest4j/opentest4j@1.3.0?type=jar",
-        "pkg:maven/org.junit.platform/junit-platform-commons@1.10.3?type=jar",
+        "pkg:maven/org.opentest4j/opentest4j@1.2.0?type=jar",
+        "pkg:maven/org.junit.platform/junit-platform-commons@1.9.1?type=jar",
         "pkg:maven/org.apiguardian/apiguardian-api@1.1.2?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/org.opentest4j/opentest4j@1.3.0?type=jar",
+      "ref" : "pkg:maven/org.opentest4j/opentest4j@1.2.0?type=jar",
       "dependsOn" : [ ]
     },
     {
-      "ref" : "pkg:maven/org.junit.platform/junit-platform-commons@1.10.3?type=jar",
+      "ref" : "pkg:maven/org.junit.platform/junit-platform-commons@1.9.1?type=jar",
       "dependsOn" : [
         "pkg:maven/org.apiguardian/apiguardian-api@1.1.2?type=jar"
       ]
@@ -637,22 +636,22 @@
       "dependsOn" : [ ]
     },
     {
-      "ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.10.3?type=jar",
+      "ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.9.1?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.opentest4j/opentest4j@1.3.0?type=jar",
-        "pkg:maven/org.junit.platform/junit-platform-commons@1.10.3?type=jar",
+        "pkg:maven/org.opentest4j/opentest4j@1.2.0?type=jar",
+        "pkg:maven/org.junit.platform/junit-platform-commons@1.9.1?type=jar",
         "pkg:maven/org.apiguardian/apiguardian-api@1.1.2?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.10.3?type=jar",
+      "ref" : "pkg:maven/org.junit.jupiter/junit-jupiter-params@5.9.1?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.10.3?type=jar",
+        "pkg:maven/org.junit.jupiter/junit-jupiter-api@5.9.1?type=jar",
         "pkg:maven/org.apiguardian/apiguardian-api@1.1.2?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/org.antlr/antlr4-runtime@4.13.1?type=jar",
+      "ref" : "pkg:maven/org.antlr/antlr4-runtime@4.7.2?type=jar",
       "dependsOn" : [ ]
     }
   ]
