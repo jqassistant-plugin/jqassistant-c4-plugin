@@ -30,8 +30,8 @@ jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElem
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement.new C4Language.C4LanguageElement() {...},2,5,0,0,1,1,1,1,1,1
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement,2,54,0,0,1,6,1,1,1,1
-jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,SecondaryElementType,0,39,0,0,0,4,0,1,0,1
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.report,C4Language.C4LanguageElement,2,33,0,0,1,6,1,1,1,1
+jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,SecondaryElementType,0,26,0,0,0,4,0,1,0,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,Person,0,2,0,0,0,1,0,1,0,1
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,AbstractElement,0,31,0,0,0,7,0,3,0,3
 jqassistant-c4-plugin,org.jqassistant.plugin.c4.data,System,0,2,0,0,0,1,0,1,0,1
