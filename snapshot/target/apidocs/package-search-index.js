@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.jqassistant.plugin.c4"},{"l":"org.jqassistant.plugin.c4.antlr"},{"l":"org.jqassistant.plugin.c4.data"},{"l":"org.jqassistant.plugin.c4.model"},{"l":"org.jqassistant.plugin.c4.report"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.jqassistant.plugin.c4"},{"l":"org.jqassistant.plugin.c4.antlr"},{"l":"org.jqassistant.plugin.c4.data"},{"l":"org.jqassistant.plugin.c4.model"},{"l":"org.jqassistant.plugin.c4.report"}]
