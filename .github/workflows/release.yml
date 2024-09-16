@@ -42,7 +42,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   neo4jv5:
-    needs: cleant-tag
+    needs: clean-tag
     uses: jqassistant-tooling/jqassistant-github-actions/.github/workflows/release.yml@main
     with:
       java_version: 17
