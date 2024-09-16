@@ -34,6 +34,7 @@ jobs:
       sonar_token: ${{ secrets.SONAR_TOKEN }}
   clean-tag:
     needs: neo4jv4
+    runs-on: ubuntu-latest
     steps: 
       - uses: ClementTsang/delete-tag-and-release@v0.3.1
         with:
