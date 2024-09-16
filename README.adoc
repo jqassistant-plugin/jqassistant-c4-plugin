@@ -34,7 +34,7 @@ jqassistant:
         - ${project.basedir}/documentation/c4</path> <3>
 ----
 <1> Dependency to the C4 plugin
-<2> The classifier, use antlr4.7.2 for builds with JDK11/Neo4j 4 and antlr4.13.1 for builds with JDK17/Neo4j v5
+<2> The classifier, use neo4jv4 for builds with JDK11/Neo4j 4 and neo4jv5 for builds with JDK17/Neo4j v5
 <3> Location of the `.puml`-files
 
 == Mapping between C4 and jQAssistant

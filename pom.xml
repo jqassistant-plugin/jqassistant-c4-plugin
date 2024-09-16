@@ -146,7 +146,7 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <classifier>antlr${antlr4.version}</classifier>
+                            <classifier>${classifier.name}</classifier>
                         </configuration>
                     </execution>
                 </executions>
@@ -162,6 +162,7 @@
             </activation>
             <properties>
                 <antlr4.version>4.7.2</antlr4.version>
+                <classifier.name>neo4jv4</classifier.name>
             </properties>
         </profile>
         <profile>
@@ -171,6 +172,7 @@
             </activation>
             <properties>
                 <antlr4.version>4.13.1</antlr4.version>
+                <classifier.name>neo4jv5</classifier.name>
             </properties>
         </profile>
     </profiles>
