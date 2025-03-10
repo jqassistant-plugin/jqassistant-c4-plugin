@@ -13,7 +13,7 @@
 
     <url>http://jqassistant.org/</url>
     <description>
-        PlantUML C4 Plugin for jQAssistant.
+        The jQAssistant plugin providing a scanner for C4 PlantUML files.
     </description>
 
     <organization>
