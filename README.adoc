@@ -26,14 +26,16 @@ jqassistant:
   plugins:
     - group-id: org.jqassistant.plugin <1>
       artifact-id: jqassistant-c4-plugin
+      classifier: <classifier> <2>
       version: ${jqassistant.c4-plugin.version}
   scan:
     include:
       files:
-        - ${project.basedir}/documentation/c4</path> <2>
+        - ${project.basedir}/documentation/c4</path> <3>
 ----
 <1> Dependency to the C4 plugin
-<2> Location of the `.puml`-files
+<2> The classifier, use neo4jv4 for builds with JDK11/Neo4j 4 and neo4jv5 for builds with JDK17/Neo4j v5
+<3> Location of the `.puml`-files
 
 == Mapping between C4 and jQAssistant
 

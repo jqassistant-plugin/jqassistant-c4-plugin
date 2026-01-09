@@ -136,6 +136,22 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>antlr${antlr4.version}</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>${classifier.name}</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -147,6 +163,7 @@
             </activation>
             <properties>
                 <antlr4.version>4.7.2</antlr4.version>
+                <classifier.name>neo4jv4</classifier.name>
             </properties>
         </profile>
         <profile>
@@ -156,6 +173,7 @@
             </activation>
             <properties>
                 <antlr4.version>4.13.1</antlr4.version>
+                <classifier.name>neo4jv5</classifier.name>
             </properties>
         </profile>
     </profiles>
