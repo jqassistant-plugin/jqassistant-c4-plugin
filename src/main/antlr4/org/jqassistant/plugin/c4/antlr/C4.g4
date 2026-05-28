@@ -112,5 +112,7 @@ LB: '(';
 RB: ')';
 US: '_';
 DL: '$';
+LINE_COMMENT: '\'' ~[\r\n]* -> skip;
+BLOCK_COMMENT: '/' '\'' .*? '\'' '/' -> skip;
 WS: (' ' | '\t') -> skip;
 NL:  '\r'? '\n';
