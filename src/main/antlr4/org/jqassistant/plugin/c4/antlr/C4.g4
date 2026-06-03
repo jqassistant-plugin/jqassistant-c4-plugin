@@ -99,7 +99,7 @@ KeyValue: DL CHAR+ WS* '=' WS* STRING;
 Preproc: '!' ~[\r\n]*;
 Skinparam: 'skinparam' ~[\r\n]*;
 ShowLegend: 'SHOW_LEGEND' ~[\r\n]*;
-Ignore: ('AddRelTag' | 'AddComponentTag' | 'AddExternalComponentTag' | 'UpdateBoundaryStyle' | 'WithoutPropertyHeader') ~[\r\n]*;
+Ignore: ('AddPersonTag' | 'AddExternalPersonTag' | 'AddSystemTag' | 'AddExternalSystemTag' | 'AddComponentTag' | 'AddExternalComponentTag' | 'AddContainerTag' | 'AddExternalContainerTag' | 'AddNodeTag' | 'AddElementTag' | 'AddRelTag' | 'UpdateBoundaryStyle' | 'WithoutPropertyHeader') ~[\r\n]*;
 
 STRING: '"' ~["\r\n]* '"' | CHAR+;
 CHAR: ~[",)({}@!\r\n ];
@@ -112,5 +112,7 @@ LB: '(';
 RB: ')';
 US: '_';
 DL: '$';
+LINE_COMMENT: '\'' ~[\r\n]* -> skip;
+BLOCK_COMMENT: '/' '\'' .*? '\'' '/' -> skip;
 WS: (' ' | '\t') -> skip;
 NL:  '\r'? '\n';
